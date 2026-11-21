@@ -36,7 +36,7 @@ npx -y skills@latest add khanglvm/figma-lens --skill figma-lens --global --yes
 
 Start a new agent session afterwards so the agent discovers the skill. The skill also ships inside the npm package under `skills/figma-lens/`.
 
-Agents that support MCP can use the tools instead of the CLI. See [MCP server](mcp.md).
+Agents that support MCP can use the tools instead of the CLI. See [MCP server](/figma-lens/mcp).
 
 ## Check the install
 
@@ -45,4 +45,4 @@ figma-lens --version
 figma-lens auth status
 ```
 
-`auth status` exits with code 1 until a token is configured. Add one in the [next step](authentication.md), then run `figma-lens doctor` to confirm that Figma accepts it.
+`auth status` exits with code 1 until a token is configured. Add one in the [next step](/figma-lens/authentication), then run `figma-lens doctor` to confirm that Figma accepts it.

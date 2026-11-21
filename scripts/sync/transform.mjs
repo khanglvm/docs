@@ -46,10 +46,12 @@ export function takeSummary(body) {
 const quote = (value) => JSON.stringify(String(value));
 
 /**
- * Rewrites a relative link target. Links to other published pages stay relative so Fumadocs resolves
- * them; anything else in the repo (README, source, examples) points at GitHub.
+ * Rewrites a relative link target. Links to other published pages become site paths
+ * (/<slug>/<page>), because the site serves pages without a trailing slash and a browser would
+ * resolve "profiles.md" on /jira-cli to /profiles.md. Anything else in the repo (README, source,
+ * examples) points at GitHub.
  * @param {string} target link target as written in the page
- * @param {{ pagePath: string, published: Set<string>, repoUrl: string, ref: string }} ctx
+ * @param {{ pagePath: string, published: Set<string>, repoUrl: string, ref: string, slug: string }} ctx
  *   pagePath is the page's path inside docs/ (e.g. "guides/plugins.md").
  */
 export function rewriteLink(target, ctx) {
@@ -60,9 +62,17 @@ export function rewriteLink(target, ctx) {
   if (resolved === null) return target;
   const inDocs = resolved.startsWith('docs/') ? resolved.slice(5) : null;
   // Published pages and docs/assets/ (copied by the sync) resolve on the site itself.
-  if (inDocs !== null && (ctx.published.has(inDocs) || inDocs.startsWith('assets/'))) return target;
+  if (inDocs !== null && ctx.published.has(inDocs)) return sitePath(ctx.slug, inDocs) + hash;
+  // docs/assets/ is copied by the sync and stays relative to the page.
+  if (inDocs !== null && inDocs.startsWith('assets/')) return target;
   const kind = pathPart.endsWith('/') ? 'tree' : 'blob';
   return `${ctx.repoUrl}/${kind}/${ctx.ref}/${resolved}${hash}`;
+}
+
+/** The site URL of a published page: "guides/index.md" in jira-cli is /jira-cli/guides. */
+export function sitePath(slug, pageInDocs) {
+  const route = pageInDocs.replace(/\.md$/, '').replace(/(^|\/)index$/, '');
+  return `/${slug}${route ? `/${route}` : ''}`;
 }
 
 // Resolves `rel` against a directory inside docs/, returning a repo-root path or null when it escapes.

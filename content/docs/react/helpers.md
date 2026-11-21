@@ -133,4 +133,4 @@ These exports affect TypeScript only. Use them to reduce repeated type expressio
 | `DistributiveOmit<T, K>` | Apply Omit to each union member: `DistributiveOmit<{ kind: 'a'; x: number } \| { kind: 'b'; y: string }, 'kind'>` | A compile-time union transformation |
 | `Prettify<T>` | Expand an object intersection for easier type inspection: `Prettify<{ a: string } & { b: number }>` | Does not transform values |
 
-Root exports also include `TContextState` and `TStateManager`, return-type aliases for their factories, plus `LocalizedString` and `TranslationNamespace`, described in the [translation guide](translation.md#13-api-reference).
+Root exports also include `TContextState` and `TStateManager`, return-type aliases for their factories, plus `LocalizedString` and `TranslationNamespace`, described in the [translation guide](/react/translation#13-api-reference).

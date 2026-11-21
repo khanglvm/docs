@@ -44,8 +44,8 @@ description: "This walkthrough builds a plugin that stops any prompt that looks 
 
 Every agent you set up with `init` now refuses that prompt and shows the reason.
 
-If you run hookmux from a source checkout, replace `hookmux` in these commands with `node /path/to/hookmux/dist/cli.mjs`, as described in [Install](install.md).
+If you run hookmux from a source checkout, replace `hookmux` in these commands with `node /path/to/hookmux/dist/cli.mjs`, as described in [Install](/hookmux/install).
 
 You can also ask your agent to write a plugin for you, for example "make a hook that reminds me to run the tests before a release". hookmux installs an authoring skill into each agent that walks it through writing, testing and installing the plugin. The agent installs the plugin in shadow mode, where it runs and is logged but adds nothing, and you approve it when you are ready.
 
-To see what each part of the manifest means, read [How plugins decide](how-plugins-decide.md). To add test cases, read [Test a plugin](testing.md).
+To see what each part of the manifest means, read [How plugins decide](/hookmux/how-plugins-decide). To add test cases, read [Test a plugin](/hookmux/testing).

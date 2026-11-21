@@ -5,7 +5,7 @@ description: "jira-cli gives a coding agent direct Jira Server access through sh
 
 ## Set up
 
-Install the CLI and a profile once per machine (see [Install](install.md)):
+Install the CLI and a profile once per machine (see [Install](/jira-cli/install)):
 
 ```sh
 npm install -g @khanglvm/jira-cli
@@ -65,9 +65,9 @@ All pages as one plain-text file: https://docs.khangle.dev/jira-cli/llms-full.tx
 | Upload files | `jira-cli attach PROJ-123 a.png b.txt --perform-action` |
 | Watch, vote | `jira-cli watch PROJ-123 --perform-action`, `jira-cli vote PROJ-123 --perform-action` (`--remove` undoes) |
 | Boards and sprints | `jira-cli boards --project PROJ`, `jira-cli sprints <boardId> --state active` |
-| Anything else | `jira-cli invoke <tool> --args '<json>'`, see [Tool reference](tools.md) |
+| Anything else | `jira-cli invoke <tool> --args '<json>'`, see [Tool reference](/jira-cli/tools) |
 
-For every option of every command see the [Command reference](commands.md).
+For every option of every command see the [Command reference](/jira-cli/commands).
 
 ## Output shapes
 
@@ -144,7 +144,7 @@ stderr, exit code 1:
 - JQL: `statusCategory` takes only `To Do`, `In Progress` or `Done`. Issue types go in `type` or `issuetype`. Never write `type = "To Do"`. Quote values with spaces.
 - `release` accepts a URL on the profile's own Jira host, or a numeric version id. It refuses other hosts.
 - `--inline-image` adds Jira wiki markup (`!file.png|thumbnail!`) to the comment. `--attach` does not change the comment text.
-- On a Jira database without 4-byte UTF-8, a comment with an emoji fails with HTTP 500. Add the profile with `--supplementary-characters entities` (see [Profiles and storage](profiles.md)).
+- On a Jira database without 4-byte UTF-8, a comment with an emoji fails with HTTP 500. Add the profile with `--supplementary-characters entities` (see [Profiles and storage](/jira-cli/profiles)).
 
 ## Limits
 

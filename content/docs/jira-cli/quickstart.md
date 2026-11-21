@@ -32,7 +32,7 @@ jira-cli search --reported --order-by "priority DESC"
 jira-cli search 'project = PROJ AND status = "In Progress"'
 ```
 
-`search` takes optional JQL plus filters such as `--mine`, `--open` and `--project`. More in [Find and read tickets](tickets.md).
+`search` takes optional JQL plus filters such as `--mine`, `--open` and `--project`. More in [Find and read tickets](/jira-cli/tickets).
 
 ## 4. Preview a change
 
@@ -56,7 +56,7 @@ The result then has `success: true` and the id of the new comment.
 
 ## Where to go from here
 
-- [Change tickets](changes.md): create, assign, move, label, log work.
-- [Comments and attachments](comments.md): files and screenshots.
-- [Release boards](releases.md): everything in a project version.
+- [Change tickets](/jira-cli/changes): create, assign, move, label, log work.
+- [Comments and attachments](/jira-cli/comments): files and screenshots.
+- [Release boards](/jira-cli/releases): everything in a project version.
 - `jira-cli easy` prints ready-made command recipes as JSON, and `jira-cli --help` lists every command.

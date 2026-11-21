@@ -22,12 +22,12 @@ Plugins decide with checks: words, regular expressions, the tool being called, t
 
 | You want to                                    | Read                                                             |
 | ---------------------------------------------- | ---------------------------------------------------------------- |
-| Install hookmux                                | [Install](install.md)                                            |
-| Build and run a first plugin                   | [Write your first plugin](quickstart.md)                         |
-| Understand how a plugin decides                | [How plugins decide](how-plugins-decide.md)                      |
-| Use plugins other people wrote, or share yours | [Install and share plugins](plugin-sources.md)                   |
-| Test a plugin before you turn it on            | [Test a plugin](testing.md)                                      |
-| See which agents are supported                 | [Supported agents](hosts.md)                                     |
-| Know what hookmux does to protect you          | [Safety and approvals](safety.md)                                |
-| Look up a command or a manifest key            | [Command reference](cli.md), [plugin.toml reference](plugins.md) |
-| Let a coding agent do the work                 | [Use hookmux with coding agents](agents.md)                      |
+| Install hookmux                                | [Install](/hookmux/install)                                            |
+| Build and run a first plugin                   | [Write your first plugin](/hookmux/quickstart)                         |
+| Understand how a plugin decides                | [How plugins decide](/hookmux/how-plugins-decide)                      |
+| Use plugins other people wrote, or share yours | [Install and share plugins](/hookmux/plugin-sources)                   |
+| Test a plugin before you turn it on            | [Test a plugin](/hookmux/testing)                                      |
+| See which agents are supported                 | [Supported agents](/hookmux/hosts)                                     |
+| Know what hookmux does to protect you          | [Safety and approvals](/hookmux/safety)                                |
+| Look up a command or a manifest key            | [Command reference](/hookmux/cli), [plugin.toml reference](/hookmux/plugins) |
+| Let a coding agent do the work                 | [Use hookmux with coding agents](/hookmux/agents)                      |

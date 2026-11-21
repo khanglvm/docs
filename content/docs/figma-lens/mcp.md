@@ -5,7 +5,7 @@ description: "figma-lens can run as an MCP server, so an MCP-capable agent calls
 
 ## Connect a client
 
-The server starts with `figma-lens mcp` and talks over stdio by default. It reads the token saved by `figma-lens auth login`, or a `FIGMA_TOKEN` in the host's configuration, so sign in first. See [Authentication](authentication.md).
+The server starts with `figma-lens mcp` and talks over stdio by default. It reads the token saved by `figma-lens auth login`, or a `FIGMA_TOKEN` in the host's configuration, so sign in first. See [Authentication](/figma-lens/authentication).
 
 ### Claude Code
 
@@ -59,7 +59,7 @@ figma-lens teams add "https://www.figma.com/files/.../team/TEAM_ID/..."
 figma-lens context
 ```
 
-The token needs `folders:read` as well as the normal file and user scopes. Add `file_metadata:read` for guidance that starts from a design URL. See [Find designs without a link](find-designs.md).
+The token needs `folders:read` as well as the normal file and user scopes. Add `file_metadata:read` for guidance that starts from a design URL. See [Find designs without a link](/figma-lens/find-designs).
 
 ## One shared HTTP endpoint
 
@@ -114,4 +114,4 @@ All `url` values are Figma `/design` or `/file` URLs, preferably with a `node-id
 
 `figma_lens_find` returns at most the requested number of matches and attaches at most two screenshots. It keeps the full ranking in a local file. An agent should call `figma_lens_context` only when the team or workspace is unclear, and otherwise pass the user's scope straight to `figma_lens_find`.
 
-When no team is registered, an agent passes any design URL it has as `figma_lens_context.source_url`. The tool returns the file and folder names and a question asking the user for the owning team-page URL. After the user answers, run `figma-lens teams add "<PASTED_TEAM_URL>"` and search again. For the full agent rules, see [Use with coding agents](agents.md).
+When no team is registered, an agent passes any design URL it has as `figma_lens_context.source_url`. The tool returns the file and folder names and a question asking the user for the owning team-page URL. After the user answers, run `figma-lens teams add "<PASTED_TEAM_URL>"` and search again. For the full agent rules, see [Use with coding agents](/figma-lens/agents).

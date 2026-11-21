@@ -33,8 +33,8 @@ jira-cli profile test
 
 It prints the Jira user you signed in as. `jira-cli profile list` shows every saved profile, with the password hidden.
 
-If the keychain is not available, for example on a headless server, see [Profiles and storage](profiles.md) for the fallback modes.
+If the keychain is not available, for example on a headless server, see [Profiles and storage](/jira-cli/profiles) for the fallback modes.
 
 ## Next steps
 
-Run your first commands in the [Quickstart](quickstart.md).
+Run your first commands in the [Quickstart](/jira-cli/quickstart).

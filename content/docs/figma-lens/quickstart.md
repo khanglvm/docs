@@ -40,6 +40,6 @@ Results are saved in `.figma-lens/` in the current folder. Add that folder to `.
 
 ## Next steps
 
-- Describe a design without a link: [Find designs without a link](find-designs.md).
-- Build a screen and check it against the design: [Design-to-code workflow](design-to-code.md).
-- Hand the work to an agent: [Use with coding agents](agents.md).
+- Describe a design without a link: [Find designs without a link](/figma-lens/find-designs).
+- Build a screen and check it against the design: [Design-to-code workflow](/figma-lens/design-to-code).
+- Hand the work to an agent: [Use with coding agents](/figma-lens/agents).

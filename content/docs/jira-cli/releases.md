@@ -31,4 +31,4 @@ Release results contain every issue Jira assigns to the version. Do not drop ite
 jira-cli invoke release.get --args '{"releaseBoard":"https://jira.example.com/projects/PROJ/versions/12345"}'
 ```
 
-The tool name is `jira_get_release_board`. See the [Tool reference](tools.md).
+The tool name is `jira_get_release_board`. See the [Tool reference](/jira-cli/tools).

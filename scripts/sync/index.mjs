@@ -48,7 +48,7 @@ async function syncLibrary(lib, sha, localDir) {
     const { pages, metas } = collectPublished(files, read);
     const published = new Set(pages);
     await rm(stage, { recursive: true, force: true });
-    const ctx = { published, repoUrl: `https://github.com/${lib.repo}`, ref: sha };
+    const ctx = { slug: lib.slug, published, repoUrl: `https://github.com/${lib.repo}`, ref: sha };
     for (const page of pages) {
       const { text } = toSitePage(read(page), { ...ctx, pagePath: page });
       await writeOut(join(stage, page), text);

@@ -61,7 +61,7 @@ export default async function Page() {
 
 ## Language switching without a reload
 
-The [translation guide](translation.md#9-set-up-a-nextjs-app-router-app) has the full setup. In short: the root layout reads a `lang` cookie and seeds the language store; client components translate through hooks and switch as soon as the store changes; server components translate with `createTranslator` and pick up the change after `router.refresh()`.
+The [translation guide](/react/translation#9-set-up-a-nextjs-app-router-app) has the full setup. In short: the root layout reads a `lang` cookie and seeds the language store; client components translate through hooks and switch as soon as the store changes; server components translate with `createTranslator` and pick up the change after `router.refresh()`.
 
 ## Events
 

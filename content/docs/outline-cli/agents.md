@@ -57,7 +57,7 @@ Every page of these docs is also published as plain text: `docs.khangle.dev/outl
    `profile test` prints `{ "ok": true, "profile": "<id>", "user": {...}, "team": {...} }`.
 5. Credentials are stored in the OS keychain. `OUTLINE_CLI_KEYCHAIN_MODE=optional` falls back to the config file when the keychain fails, and `disabled` always uses the config file. The default `required` makes `profile add` fail when there is no keychain.
 
-Other auth types are `basic` and `password`. [Profiles](profiles.md) lists their flags.
+Other auth types are `basic` and `password`. [Profiles](/outline-cli/profiles) lists their flags.
 
 ## Calling tools
 
@@ -72,7 +72,7 @@ outline-cli tools contract <tool>
 - Tool names use dots (`documents.search`). Underscores and common shorthands (`documents_search`, `docs.answer`) are corrected automatically, and the output then carries `requestedTool` and `toolResolution`.
 - Pass `--profile <id>` to choose a profile. Without it the default profile is used.
 - Quote the JSON for your shell. For long Markdown bodies, write the arguments to a file and use `--args-file`.
-- Run `outline-cli tools contract <tool>` only after a validation failure or when you need a signature. The [tools](tools.md) page lists all 137 tools.
+- Run `outline-cli tools contract <tool>` only after a validation failure or when you need a signature. The [tools](/outline-cli/tools) page lists all 137 tools.
 
 ## Operating rules
 
@@ -181,4 +181,4 @@ Order: `--profile`, then the default profile, then the only saved profile. With 
 - Exit codes: 0 success, 1 any error, 2 `batch --strict-exit` with a failed item. A batch with failed items exits 0 without `--strict-exit`, so check `failed`.
 - Files: config `~/.config/outline-cli/config.json` (`OUTLINE_CLI_CONFIG`), results and delete receipts under `~/.cache/outline-cli/tmp` (`OUTLINE_CLI_TMP_DIR`), memory index `~/.cache/outline-cli/memory/observations.json` (`OUTLINE_CLI_MEMORY_FILE`).
 
-More detail: [Commands](commands.md) for every flag, [Tools](tools.md) for every tool, and the built-in playbooks from `outline-cli tools help ai-skills --view full`.
+More detail: [Commands](/outline-cli/commands) for every flag, [Tools](/outline-cli/tools) for every tool, and the built-in playbooks from `outline-cli tools help ai-skills --view full`.

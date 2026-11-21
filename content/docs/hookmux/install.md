@@ -63,7 +63,7 @@ hookmux init --host claude-code --host codex
 hookmux init --yes
 ```
 
-`--host <id>` wires one agent and can repeat. `--yes` wires every detected agent. Without a terminal, `init` needs one of the two. The agent ids are `claude-code`, `codex`, `gemini-cli`, `qwen-code`, `droid`, `qoder`, `codebuddy` and `opencode`; see [Supported agents](hosts.md). `--no-skill` and `--no-bundled` leave out the authoring skill and the bundled plugins.
+`--host <id>` wires one agent and can repeat. `--yes` wires every detected agent. Without a terminal, `init` needs one of the two. The agent ids are `claude-code`, `codex`, `gemini-cli`, `qwen-code`, `droid`, `qoder`, `codebuddy` and `opencode`; see [Supported agents](/hookmux/hosts). `--no-skill` and `--no-bundled` leave out the authoring skill and the bundled plugins.
 
 ## Check the install
 

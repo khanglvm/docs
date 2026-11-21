@@ -43,11 +43,11 @@ outline-cli invoke documents.update \
   --args '{"id":"<document-id>","text":"\n\n## Follow-up\n- Added notes","editMode":"append","performAction":true,"view":"summary"}'
 ```
 
-To avoid overwriting someone else's change, use `documents.safe_update` or `documents.apply_patch_safe`, which check the revision first. See [Edit documents](edit-documents.md).
+To avoid overwriting someone else's change, use `documents.safe_update` or `documents.apply_patch_safe`, which check the revision first. See [Edit documents](/outline-cli/edit-documents).
 
 ## What next
 
-- Work with several workspaces: [Profiles](profiles.md).
-- Find things faster, including by title: [Search and read](search-and-read.md).
-- Remove a document safely: [Delete documents](delete-documents.md).
-- Every result is JSON. [Output and batch calls](output-and-batch.md) explains large results, NDJSON and running many operations in one call.
+- Work with several workspaces: [Profiles](/outline-cli/profiles).
+- Find things faster, including by title: [Search and read](/outline-cli/search-and-read).
+- Remove a document safely: [Delete documents](/outline-cli/delete-documents).
+- Every result is JSON. [Output and batch calls](/outline-cli/output-and-batch) explains large results, NDJSON and running many operations in one call.

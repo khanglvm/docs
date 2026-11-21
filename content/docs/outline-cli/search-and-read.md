@@ -103,4 +103,4 @@ outline-cli invoke memory.recent --args '{"type":"document","limit":10}'
 
 `memory.lookup` and `memory.recent` use only the local index and make no network call. `memory.resolve` checks memory first, falls back to a live search when it has no match, and reads fresh metadata for the best match. Pass `"fallbackSearch":false` for memory-only behavior. `memory.remember` saves your own alias for a document, and `memory.clear` empties the index for the selected profile (or all with `allProfiles:true`). Both change only the local file, and both need `performAction:true`. `memory.stats` summarizes the index.
 
-Documents that you delete through the CLI are removed from the index, so stale search results don't bring them back. The index file is `~/.cache/outline-cli/memory/observations.json` by default. [Commands](commands.md) lists the environment variable that moves it.
+Documents that you delete through the CLI are removed from the index, so stale search results don't bring them back. The index file is `~/.cache/outline-cli/memory/observations.json` by default. [Commands](/outline-cli/commands) lists the environment variable that moves it.

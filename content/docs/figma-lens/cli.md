@@ -37,7 +37,7 @@ A `<url-or-key>` is a Figma `/design` or `/file` URL, or a bare file key. A node
 
 ### auth
 
-`auth login` reads a token, checks it with Figma and saves it. It prompts with hidden input in a terminal. In a script, use `--token-stdin` or `--token-file`. `auth status` prints whether a token is configured, where it comes from, the saved path and the saved account, and exits with code 1 when none is configured. `auth path` prints the credential file path. `auth logout` deletes the saved login. See [Authentication](authentication.md).
+`auth login` reads a token, checks it with Figma and saves it. It prompts with hidden input in a terminal. In a script, use `--token-stdin` or `--token-file`. `auth status` prints whether a token is configured, where it comes from, the saved path and the saved account, and exits with code 1 when none is configured. `auth path` prints the credential file path. `auth logout` deletes the saved login. See [Authentication](/figma-lens/authentication).
 
 ### doctor
 
@@ -49,7 +49,7 @@ Prints the account and the registered team search scopes. With a design URL, it 
 
 ### teams
 
-`teams add <team-url-or-id>` validates the team with Figma and saves its ID and name. `teams add <design-url>` prints the setup request instead of saving anything. `teams list` prints the same data as `context`. `teams remove <team-url-or-id>` deletes a saved scope. See [Find designs without a link](find-designs.md).
+`teams add <team-url-or-id>` validates the team with Figma and saves its ID and name. `teams add <design-url>` prints the setup request instead of saving anything. `teams list` prints the same data as `context`. `teams remove <team-url-or-id>` deletes a saved scope. See [Find designs without a link](/figma-lens/find-designs).
 
 ## Finding and focusing
 
@@ -185,7 +185,7 @@ Typical request counts on a cold cache:
 
 ## MCP server command
 
-`figma-lens mcp` starts the MCP server on stdio. `--http` serves Streamable HTTP instead, with `--host` (default `127.0.0.1`) and `--port` (default `3333`). See [MCP server](mcp.md).
+`figma-lens mcp` starts the MCP server on stdio. `--http` serves Streamable HTTP instead, with `--host` (default `127.0.0.1`) and `--port` (default `3333`). See [MCP server](/figma-lens/mcp).
 
 ## Environment variables
 
@@ -205,7 +205,7 @@ Typical request counts on a cold cache:
 | `FIGMA_REQUEST_TIMEOUT_MS` | Timeout per request. Defaults to `30000`. |
 | `FIGMA_MAX_RESPONSE_BYTES` | Response size limit. Defaults to 128 MiB. |
 
-The CLI never loads a project `.env` on its own. Token precedence is listed in [Authentication](authentication.md#other-ways-to-supply-a-token).
+The CLI never loads a project `.env` on its own. Token precedence is listed in [Authentication](/figma-lens/authentication#other-ways-to-supply-a-token).
 
 ## Exit codes and errors
 

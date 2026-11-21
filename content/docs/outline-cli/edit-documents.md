@@ -92,4 +92,4 @@ outline-cli invoke documents.create_from_template \
 
 ## Revisions
 
-`revisions.list` and `revisions.diff` show history (see [Search and read](search-and-read.md)). `revisions.restore` restores a document to a revision and needs `performAction:true`. Deleting is covered in [Delete documents](delete-documents.md).
+`revisions.list` and `revisions.diff` show history (see [Search and read](/outline-cli/search-and-read)). `revisions.restore` restores a document to a revision and needs `performAction:true`. Deleting is covered in [Delete documents](/outline-cli/delete-documents).

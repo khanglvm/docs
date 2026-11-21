@@ -104,4 +104,4 @@ jira-cli vote PROJ-123 --remove --perform-action
 jira-cli attach PROJ-123 screenshot.png notes.txt --perform-action
 ```
 
-To attach files together with a comment, see [Comments and attachments](comments.md).
+To attach files together with a comment, see [Comments and attachments](/jira-cli/comments).

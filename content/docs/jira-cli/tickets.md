@@ -59,10 +59,10 @@ jira-cli boards --project PROJ
 jira-cli sprints 42 --state active
 ```
 
-`users` lists people who can be assigned on a board, a project or an issue, and keeps the list in a local cache for 30 days. Use `--refresh-cache` to reload it, `--no-cache` to skip the cache, and `--cache-ttl-days` to change how long it lasts. See [Change tickets](changes.md) for assigning.
+`users` lists people who can be assigned on a board, a project or an issue, and keeps the list in a local cache for 30 days. Use `--refresh-cache` to reload it, `--no-cache` to skip the cache, and `--cache-ttl-days` to change how long it lasts. See [Change tickets](/jira-cli/changes) for assigning.
 
 Run `jira-cli boards --help` and `jira-cli sprints --help` for their filters.
 
 ## Big results
 
-Results larger than 12000 bytes are written to a temp file and the command prints the file path instead. Read it with `jira-cli tmp cat <file>`, or change the behavior with `--result-mode inline` or `--inline-max-bytes`. The [command reference](commands.md) lists the temp-file commands.
+Results larger than 12000 bytes are written to a temp file and the command prints the file path instead. Read it with `jira-cli tmp cat <file>`, or change the behavior with `--result-mode inline` or `--inline-max-bytes`. The [command reference](/jira-cli/commands) lists the temp-file commands.

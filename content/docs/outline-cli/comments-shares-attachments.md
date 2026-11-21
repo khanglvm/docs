@@ -90,4 +90,4 @@ outline-cli invoke collections.add_group \
   --args '{"query":"engineering","groupQuery":"security","permission":"read_write","performAction":true}'
 ```
 
-The `*.add_user`, `*.remove_user`, `*.add_group` and `*.remove_group` tools exist for documents and collections, and `groups.add_user` and `groups.remove_user` manage group members. [Tools](tools.md) lists them all.
+The `*.add_user`, `*.remove_user`, `*.add_group` and `*.remove_group` tools exist for documents and collections, and `groups.add_user` and `groups.remove_user` manage group members. [Tools](/outline-cli/tools) lists them all.

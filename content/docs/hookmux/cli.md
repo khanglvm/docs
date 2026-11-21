@@ -17,7 +17,7 @@ hookmux [--home <dir>] <command> [options]
 
 Exit codes: `0` for success, `1` when the command found problems, and `2` for a usage error such as an unknown flag. Set `HOOKMUX_DEBUG=1` to print a stack trace with an error.
 
-If you run hookmux from a source checkout, run each command as `node /path/to/hookmux/dist/cli.mjs <command>`. See [Install](install.md).
+If you run hookmux from a source checkout, run each command as `node /path/to/hookmux/dist/cli.mjs <command>`. See [Install](/hookmux/install).
 
 ## Set up and remove
 
@@ -245,7 +245,7 @@ Everything hookmux writes is under `~/.hookmux`, unless you set `HOOKMUX_HOME` o
 | `bin/hookmux-hook` | The launcher script the agents run                                                                                                       |
 | `engine/`          | Installed engine versions, with `engine/current` pointing at the active one                                                              |
 | `plugins/`         | Installed plugins, one folder each                                                                                                       |
-| `config.toml`      | Your settings, provider definitions and per-plugin overrides. See the [plugin.toml reference](plugins.md#overrides-in-hookmuxconfigtoml) |
+| `config.toml`      | Your settings, provider definitions and per-plugin overrides. See the [plugin.toml reference](/hookmux/plugins#overrides-in-hookmuxconfigtoml) |
 | `registry.json`    | The compiled snapshot of your plugins that each hook run reads                                                                           |
 | `trust.json`       | The recorded approvals                                                                                                                   |
 | `logs/hookmux.log` | The decision log, when it is on                                                                                                          |

@@ -228,7 +228,7 @@ lacks = ["block.prevents"]
 
 A check with an unknown feature is unknown, unless another part of it (the host id, say) is already false. A feature on an event it does not describe, such as `inject.before-call` on `tool.after`, is also unknown. A misspelled feature id is a validation error. An older engine rejects a `host` check that has only `features` or `lacks`.
 
-`hookmux validate <path>` prints, for each client, what every effect will do and which features weaken it. `hookmux test` prints the same rows for the clients its cases used, and `hookmux schema` lists every client's features per event. The [host notes](hosts.md#feature-matrix) hold the full matrix.
+`hookmux validate <path>` prints, for each client, what every effect will do and which features weaken it. `hookmux test` prints the same rows for the clients its cases used, and `hookmux schema` lists every client's features per event. The [host notes](/hookmux/hosts#feature-matrix) hold the full matrix.
 
 ## Per-host tables
 

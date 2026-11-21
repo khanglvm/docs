@@ -12,7 +12,7 @@ figma-lens teams add "https://www.figma.com/files/.../team/TEAM_ID/..."
 figma-lens context
 ```
 
-`teams add` checks the team with Figma and saves its ID and name. `context` prints your account and the registered teams. Both need a token with the `folders:read` scope; see [Authentication](authentication.md).
+`teams add` checks the team with Figma and saves its ID and name. `context` prints your account and the registered teams. Both need a token with the `folders:read` scope; see [Authentication](/figma-lens/authentication).
 
 If you only have a link to a design, pass it to `teams add` instead:
 
@@ -54,8 +54,8 @@ The result's `status` is `complete` when every file in scope was indexed and `pa
 
 ## Search with a reference screenshot
 
-Figma has no image-similarity search. Give your agent the screenshot instead. The agent reads the visible text, the purpose and state of the screen, and its main controls, then runs `find` with a short query built from those. It compares the returned screenshots with your reference by eye. See [Use with coding agents](agents.md) for the exact steps.
+Figma has no image-similarity search. Give your agent the screenshot instead. The agent reads the visible text, the purpose and state of the screen, and its main controls, then runs `find` with a short query built from those. It compares the returned screenshots with your reference by eye. See [Use with coding agents](/figma-lens/agents) for the exact steps.
 
 ## Next
 
-Once you have a match, move on to the [Design-to-code workflow](design-to-code.md), starting from the `focus` command in the result.
+Once you have a match, move on to the [Design-to-code workflow](/figma-lens/design-to-code), starting from the `focus` command in the result.

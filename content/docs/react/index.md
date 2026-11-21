@@ -14,11 +14,11 @@ I built these to stop rewriting the same setup in every React project. The same 
 
 | You need to | Use | Guide |
 | --- | --- | --- |
-| Share editable state across a feature, with selectors and optimistic updates | `createContextState` | [State](state.md) |
-| Translate UI text with compile-time checks and switch language instantly | `defineLocale`, `createTranslatorHook` | [Translations](translation.md) |
-| Notify or ask mounted components elsewhere in the app and collect their answers | `createEventMethod` | [Events](events.md) |
-| Compare, clone or cache values; pick slots from `children` | `@khanglvm/react/helpers` | [Helpers](helpers.md) |
-| Know what runs in server and client components | | [Next.js App Router](nextjs.md) |
+| Share editable state across a feature, with selectors and optimistic updates | `createContextState` | [State](/react/state) |
+| Translate UI text with compile-time checks and switch language instantly | `defineLocale`, `createTranslatorHook` | [Translations](/react/translation) |
+| Notify or ask mounted components elsewhere in the app and collect their answers | `createEventMethod` | [Events](/react/events) |
+| Compare, clone or cache values; pick slots from `children` | `@khanglvm/react/helpers` | [Helpers](/react/helpers) |
+| Know what runs in server and client components | | [Next.js App Router](/react/nextjs) |
 
 The utilities also fit together: the translation guide keeps the current language in a `createContextState` store.
 

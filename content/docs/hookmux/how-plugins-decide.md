@@ -50,7 +50,7 @@ When a plugin fires, its `[[then]]` tables run:
 | `block`  | Stops the prompt or tool call and shows the reason |
 | `notify` | Shows a message to you, not the agent              |
 
-Not every agent can do every effect on every event. Where an agent cannot block, a block becomes a notice unless you pick another fallback with `fallback`. The [Supported agents](hosts.md) page and the [plugin.toml reference](plugins.md#effects) cover the details.
+Not every agent can do every effect on every event. Where an agent cannot block, a block becomes a notice unless you pick another fallback with `fallback`. The [Supported agents](/hookmux/hosts) page and the [plugin.toml reference](/hookmux/plugins#effects) cover the details.
 
 ## Phases and order
 
@@ -65,4 +65,4 @@ When several plugins fire on the same event:
 
 ## Before it runs
 
-A plugin does nothing until you approve it with `hookmux promote`. See [Safety and approvals](safety.md).
+A plugin does nothing until you approve it with `hookmux promote`. See [Safety and approvals](/hookmux/safety).

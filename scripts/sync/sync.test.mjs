@@ -13,6 +13,7 @@ const ctx = (pagePath, published = ['index.md', 'state.md', 'guides/a.md']) => (
   published: new Set(published),
   repoUrl: 'https://github.com/o/r',
   ref: 'abc123',
+  slug: 'lib',
 });
 
 test('publishes only pages meta.json lists, following nested folders', () => {
@@ -44,8 +45,10 @@ test('a symbolic link in docs/ fails the listing instead of being read', async (
   }
 });
 
-test('links to published pages stay relative; other repo links point at GitHub', () => {
-  assert.equal(rewriteLink('state.md#api', ctx('index.md')), 'state.md#api');
+test('links to published pages become site paths; other repo links point at GitHub', () => {
+  assert.equal(rewriteLink('state.md#api', ctx('index.md')), '/lib/state#api');
+  assert.equal(rewriteLink('../index.md', ctx('guides/a.md')), '/lib');
+  assert.equal(rewriteLink('a.md', ctx('guides/a.md')), '/lib/guides/a');
   assert.equal(rewriteLink('../README.md', ctx('index.md')), 'https://github.com/o/r/blob/abc123/README.md');
   assert.equal(rewriteLink('../examples/app/', ctx('index.md')), 'https://github.com/o/r/tree/abc123/examples/app');
   assert.equal(rewriteLink('../../a.md', ctx('guides/a.md')), 'https://github.com/o/r/blob/abc123/a.md');

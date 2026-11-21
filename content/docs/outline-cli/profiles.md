@@ -31,7 +31,7 @@ outline-cli profile add internal \
   --password "$OUTLINE_PASSWORD"
 ```
 
-You can leave out `--auth-type` when you pass `--api-key`, or both `--username` and `--password`. Other optional flags are `--name`, `--timeout-ms` (default 30000) and `--headers` (comma-separated `key:value` pairs sent on every request). Credentials go to your OS keychain unless you changed `OUTLINE_CLI_KEYCHAIN_MODE`, as described in [Install and connect](install.md).
+You can leave out `--auth-type` when you pass `--api-key`, or both `--username` and `--password`. Other optional flags are `--name`, `--timeout-ms` (default 30000) and `--headers` (comma-separated `key:value` pairs sent on every request). Credentials go to your OS keychain unless you changed `OUTLINE_CLI_KEYCHAIN_MODE`, as described in [Install and connect](/outline-cli/install).
 
 ## List, test, select and remove
 

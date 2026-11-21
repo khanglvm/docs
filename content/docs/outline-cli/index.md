@@ -9,8 +9,8 @@ Results are JSON, and profiles let you switch between workspaces. This is an ind
 
 ## Where to go next
 
-- [Install and connect](install.md): install the CLI and save your first workspace profile.
-- [Quickstart](quickstart.md): search, read and edit a document in five minutes.
-- [Profiles](profiles.md), [search and read](search-and-read.md), [edit](edit-documents.md), [delete](delete-documents.md), [comments, shares and attachments](comments-shares-attachments.md) and [output and batch calls](output-and-batch.md) cover each task.
-- [Commands](commands.md) and [tools](tools.md) list every command, flag and tool.
-- [Use with coding agents](agents.md) is the exact, literal version for AI assistants.
+- [Install and connect](/outline-cli/install): install the CLI and save your first workspace profile.
+- [Quickstart](/outline-cli/quickstart): search, read and edit a document in five minutes.
+- [Profiles](/outline-cli/profiles), [search and read](/outline-cli/search-and-read), [edit](/outline-cli/edit-documents), [delete](/outline-cli/delete-documents), [comments, shares and attachments](/outline-cli/comments-shares-attachments) and [output and batch calls](/outline-cli/output-and-batch) cover each task.
+- [Commands](/outline-cli/commands) and [tools](/outline-cli/tools) list every command, flag and tool.
+- [Use with coding agents](/outline-cli/agents) is the exact, literal version for AI assistants.

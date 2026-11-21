@@ -7,7 +7,7 @@ The same text is available as plain text at [docs.khangle.dev/figma-lens/llms-fu
 
 ## Set up
 
-1. Install the CLI and the skill. See [Install](install.md).
+1. Install the CLI and the skill. See [Install](/figma-lens/install).
 
    ```sh
    npm install --global figma-lens
@@ -23,9 +23,9 @@ The same text is available as plain text at [docs.khangle.dev/figma-lens/llms-fu
    figma-lens doctor
    ```
 
-   `doctor` prints `"ok": true` and the account when the token works. `auth status` exits with code 1 when no token is configured. For CI, use `FIGMA_TOKEN`, `--token-file` or `--token-stdin`. See [Authentication](authentication.md).
+   `doctor` prints `"ok": true` and the account when the token works. `auth status` exits with code 1 when no token is configured. For CI, use `FIGMA_TOKEN`, `--token-file` or `--token-stdin`. See [Authentication](/figma-lens/authentication).
 
-3. Choose one transport for a whole task. If tools named `figma_lens_scout`, `figma_lens_focus` and `figma_lens_detail` are in your tool list, use the MCP tools. Otherwise use the CLI. If an MCP call says its server or tool is unavailable, fall back to the CLI once. Do not mix transports in one workflow, so that node IDs, cache hits and follow-up commands stay consistent. MCP setup is in [MCP server](mcp.md).
+3. Choose one transport for a whole task. If tools named `figma_lens_scout`, `figma_lens_focus` and `figma_lens_detail` are in your tool list, use the MCP tools. Otherwise use the CLI. If an MCP call says its server or tool is unavailable, fall back to the CLI once. Do not mix transports in one workflow, so that node IDs, cache hits and follow-up commands stay consistent. MCP setup is in [MCP server](/figma-lens/mcp).
 
 Suggested prompt for a user to give an agent:
 
@@ -220,4 +220,4 @@ Other limits:
 
 ## Exact commands reference
 
-Every command and flag is listed in the [CLI reference](cli.md), and every tool parameter in [MCP server](mcp.md).
+Every command and flag is listed in the [CLI reference](/figma-lens/cli), and every tool parameter in [MCP server](/figma-lens/mcp).

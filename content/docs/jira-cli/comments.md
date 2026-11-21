@@ -50,8 +50,8 @@ jira-cli attach PROJ-123 screenshot.png notes.txt --perform-action
 
 ## Emoji on older Jira databases
 
-Some Jira Server databases store only 3-byte UTF-8 and answer HTTP 500 to a comment that holds an emoji or another character above U+FFFF, saving nothing. If you hit this, set up the profile to send those characters as numeric entities. See [Profiles and storage](profiles.md#emoji-on-databases-without-4-byte-utf-8).
+Some Jira Server databases store only 3-byte UTF-8 and answer HTTP 500 to a comment that holds an emoji or another character above U+FFFF, saving nothing. If you hit this, set up the profile to send those characters as numeric entities. See [Profiles and storage](/jira-cli/profiles#emoji-on-databases-without-4-byte-utf-8).
 
 ## Read comments
 
-`show PROJ-123 --fields comment` returns the comments on an issue, and `invoke jira_get_comments` returns them with their own fields. See [Find and read tickets](tickets.md).
+`show PROJ-123 --fields comment` returns the comments on an issue, and `invoke jira_get_comments` returns them with their own fields. See [Find and read tickets](/jira-cli/tickets).

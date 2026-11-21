@@ -113,7 +113,7 @@ export const translation = assertTranslation({
 
 ## 4. Hold the current language in a store
 
-The translator hooks do not store the language. You pass them a hook that returns it, so the language can live wherever your app keeps shared state. A [`createContextState`](state.md) store is a good fit: changing the value rerenders exactly the components that read it.
+The translator hooks do not store the language. You pass them a hook that returns it, so the language can live wherever your app keeps shared state. A [`createContextState`](/react/state) store is a good fit: changing the value rerenders exactly the components that read it.
 
 ```tsx
 // i18n/language-store.tsx
@@ -375,7 +375,7 @@ Server components can import `createTranslator` and `defineLocale` from `@khangl
 
 If your URLs carry the language (`/en/...`, `/vi/...`), read it from the route params instead of the cookie. To switch without a navigation, update the store and replace the URL with `window.history.replaceState`, which Next.js 14.1 and later keep in sync with its router.
 
-Full app, including `generateMetadata` and a server-rendered line that updates after the switch: [examples/nextjs-app-router](https://github.com/khanglvm/react/tree/master/examples/nextjs-app-router). The [Next.js guide](nextjs.md) covers `'use client'` boundaries for all utilities.
+Full app, including `generateMetadata` and a server-rendered line that updates after the switch: [examples/nextjs-app-router](https://github.com/khanglvm/react/tree/master/examples/nextjs-app-router). The [Next.js guide](/react/nextjs) covers `'use client'` boundaries for all utilities.
 
 ## 10. Translate outside components
 

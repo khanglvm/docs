@@ -8,7 +8,7 @@ const answers = await emitEvent('profile:before-reset', { source: 'header' })
 if (answers.some(answer => answer?.allow === false)) return // a mounted editor said no
 ```
 
-Prefer a callback prop for parent and child, and a [store](state.md) for data that components render. Events suit commands ("open the dialog"), facts ("the profile changed, refetch") and questions to whoever is mounted ("may I leave?").
+Prefer a callback prop for parent and child, and a [store](/react/state) for data that components render. Events suit commands ("open the dialog"), facts ("the profile changed, refetch") and questions to whoever is mounted ("may I leave?").
 
 ## 1. Define the events
 
@@ -64,7 +64,7 @@ function ProfileForm() {
 }
 ```
 
-The handler can change between renders; the hook always calls the latest one, so it sees current props. Read store state through the store's snapshot getter ([state guide, section 5](state.md#5-read-the-latest-state-in-handlers)) so async handlers see current values too.
+The handler can change between renders; the hook always calls the latest one, so it sees current props. Read store state through the store's snapshot getter ([state guide, section 5](/react/state#5-read-the-latest-state-in-handlers)) so async handlers see current values too.
 
 ## 3. Emit a notification
 

@@ -49,6 +49,6 @@ By default the CLI saves the API key (or password) in your operating system's ke
 | `optional` | Try the keychain, and fall back to storing credentials in the config file when it fails. |
 | `disabled` | Never use the keychain. Credentials stay in the config file. |
 
-Use `optional` or `disabled` on machines without a keychain, such as a bare CI runner. `OUTLINE_CLI_CONFIG` moves the config file. See [Profiles](profiles.md) for all profile commands and [Commands](commands.md) for every environment variable.
+Use `optional` or `disabled` on machines without a keychain, such as a bare CI runner. `OUTLINE_CLI_CONFIG` moves the config file. See [Profiles](/outline-cli/profiles) for all profile commands and [Commands](/outline-cli/commands) for every environment variable.
 
-Next, follow the [quickstart](quickstart.md) to run your first search.
+Next, follow the [quickstart](/outline-cli/quickstart) to run your first search.

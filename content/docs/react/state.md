@@ -114,7 +114,7 @@ setState(draft => {
 
 A partial object replaces each listed top-level field as a whole; it does not merge into nested objects. To change `profile.name` and keep `profile.id`, use a draft.
 
-Values passed in a partial object are deep-copied with [`deepClone`](helpers.md#deepclonevalue-cache). Keep state to plain data: objects, arrays, primitives, `Date`, `Map`, `Set`. An `Error`, a `Promise` or a `WeakMap` makes the copy throw `Unsupported type`, and a class instance becomes a plain object. Store `String(error)` rather than the error. Functions are kept by reference.
+Values passed in a partial object are deep-copied with [`deepClone`](/react/helpers#deepclonevalue-cache). Keep state to plain data: objects, arrays, primitives, `Date`, `Map`, `Set`. An `Error`, a `Promise` or a `WeakMap` makes the copy throw `Unsupported type`, and a class instance becomes a plain object. Store `String(error)` rather than the error. Functions are kept by reference.
 
 The state is frozen from the moment the Provider mounts: `initialState` is deep-frozen in place, and every later state comes frozen from Immer. An object you put in the store, through `initialState` or a draft (an API response, a default constant), is frozen in place too, so other code that still holds it can no longer mutate it. Copy it first if something else changes it later. Like Immer, the freeze does not reach class instances, the keys and values inside a `Map` or `Set` (the collection itself is frozen), or the children of an object that was already frozen with `Object.freeze`. Edit those through the setter too.
 
@@ -372,7 +372,7 @@ Render the registrar once inside the Provider. Each Provider holds one callback;
 - Pass the same initial values on the server and on the client so hydration matches.
 - Selected snapshots are cached per hook, so finished server renders release them without effect cleanup.
 
-See the [Next.js guide](nextjs.md) for where each piece of the package runs.
+See the [Next.js guide](/react/nextjs) for where each piece of the package runs.
 
 ## 14. How it works and what to watch for
 

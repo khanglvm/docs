@@ -11,8 +11,13 @@ interface TextPage {
 
 /** Maps a relative link in `page` to the absolute URL of the page it points at, or null. */
 function resolveDocLink(href: string, page: TextPage, pages: TextPage[]): string | null {
-  if (/^([a-z][a-z0-9+.-]*:|#|\/)/i.test(href)) return null;
   const [file, hash = ''] = href.split(/(?=#)/);
+  // The sync writes links between pages as site paths (/jira-cli/profiles).
+  if (file.startsWith('/') && !file.startsWith('//')) {
+    const hit = pages.find((p) => p.url === file);
+    return hit ? `${site.url}${hit.url}.md${hash}` : null;
+  }
+  if (/^([a-z][a-z0-9+.-]*:|#)/i.test(href)) return null;
   const target = posix.normalize(posix.join(posix.dirname(page.path), file));
   const hit = pages.find((p) => p.path === target);
   return hit ? `${site.url}${hit.url}.md${hash}` : null;

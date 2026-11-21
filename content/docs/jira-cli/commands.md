@@ -106,7 +106,7 @@ Options by command:
 | `profile remove <id>` | Delete a profile and its keychain entry. `--keep-secret` keeps the entry |
 | `profile test [id]` | Sign in and print the Jira user |
 
-`profile add` also takes `--api-version <version>` (default `2`), `--name <name>`, `--description <text>`, `--keyword <csv>`, `--supplementary-characters <unicode|entities>` and `--default`. See [Profiles and storage](profiles.md).
+`profile add` also takes `--api-version <version>` (default `2`), `--name <name>`, `--description <text>`, `--keyword <csv>`, `--supplementary-characters <unicode|entities>` and `--default`. See [Profiles and storage](/jira-cli/profiles).
 
 ## Tool commands
 
@@ -117,7 +117,7 @@ Options by command:
 | `tools list` | Print every tool contract |
 | `tools help [tool]` | Print one tool contract, or all |
 
-See the [Tool reference](tools.md).
+See the [Tool reference](/jira-cli/tools).
 
 ## Temp file commands
 

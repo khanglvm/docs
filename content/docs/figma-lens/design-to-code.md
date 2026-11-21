@@ -3,7 +3,7 @@ title: "Design-to-code workflow"
 description: "This workflow turns a Figma design into UI code while keeping both the Figma requests and the agent's context small. It follows seven steps, from classifying the link to checking the finished screen against the design."
 ---
 
-The commands below are the CLI forms. An agent using the [MCP server](mcp.md) follows the same steps with the matching tools.
+The commands below are the CLI forms. An agent using the [MCP server](/figma-lens/mcp) follows the same steps with the matching tools.
 
 ## 1. Classify the link
 

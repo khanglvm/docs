@@ -63,8 +63,8 @@ figma-lens cannot read an unsaved local `.fig` file, content the token owner can
 
 If `doctor` succeeds but a file request returns 404, the token is valid and Figma did not expose that file or node to its owner. Check that the owner can open the link in a browser.
 
-Figma returns 429 when you exceed its rate limit. figma-lens retries short waits automatically. See the [CLI reference](cli.md#environment-variables) for the retry settings.
+Figma returns 429 when you exceed its rate limit. figma-lens retries short waits automatically. See the [CLI reference](/figma-lens/cli#environment-variables) for the retry settings.
 
 Treat `.env` files, saved screenshots and extracted assets as private. Keep `.figma-lens/` out of version control.
 
-More about the setup, including the agent-facing rules, is in [Use with coding agents](agents.md).
+More about the setup, including the agent-facing rules, is in [Use with coding agents](/figma-lens/agents).

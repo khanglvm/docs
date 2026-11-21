@@ -22,8 +22,8 @@ Every result is a compact JSON summary plus files saved under `.figma-lens/`. Th
 You can run the commands yourself, but the tool is built for an agent to run. There are three ways to connect one:
 
 - The agent skill teaches an agent which commands to run and in what order. It needs an agent that can run shell commands.
-- The MCP server gives an MCP-capable agent the same workflow as native tools. See [MCP server](mcp.md).
-- The CLI is the base for both. See [CLI reference](cli.md).
+- The MCP server gives an MCP-capable agent the same workflow as native tools. See [MCP server](/figma-lens/mcp).
+- The CLI is the base for both. See [CLI reference](/figma-lens/cli).
 
 The workflow needs an agent that can view images and test the UI it builds. Without image viewing, the agent cannot check what it built against the design.
 
@@ -31,14 +31,14 @@ The workflow needs an agent that can view images and test the UI it builds. With
 
 | You want to | Read |
 | --- | --- |
-| Install the tool and the agent skill | [Install](install.md) |
-| Connect a Figma token | [Authentication](authentication.md) |
-| Inspect your first design | [Quickstart](quickstart.md) |
-| Find a design when you have no link | [Find designs without a link](find-designs.md) |
-| Build a screen from a design and check it | [Design-to-code workflow](design-to-code.md) |
-| Look up a command, flag or setting | [CLI reference](cli.md) |
-| Connect an MCP client | [MCP server](mcp.md) |
-| Set up a coding agent | [Use with coding agents](agents.md) |
+| Install the tool and the agent skill | [Install](/figma-lens/install) |
+| Connect a Figma token | [Authentication](/figma-lens/authentication) |
+| Inspect your first design | [Quickstart](/figma-lens/quickstart) |
+| Find a design when you have no link | [Find designs without a link](/figma-lens/find-designs) |
+| Build a screen from a design and check it | [Design-to-code workflow](/figma-lens/design-to-code) |
+| Look up a command, flag or setting | [CLI reference](/figma-lens/cli) |
+| Connect an MCP client | [MCP server](/figma-lens/mcp) |
+| Set up a coding agent | [Use with coding agents](/figma-lens/agents) |
 
 ## Limits
 

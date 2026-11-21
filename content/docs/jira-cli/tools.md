@@ -180,6 +180,6 @@ A tool that writes (marked "yes" in the Writes column) does nothing unless both 
 
 Argument shapes beyond these names come from the tool's JSON schema in `jira-cli tools help <tool>`. Two details worth knowing:
 
-- `jira_comment_with_attachments` takes `attachments` (file paths, or objects with `path` and `filename`) and `inlineImages` (paths, or objects with `path`, `filename` and `mode` of `thumbnail` or `full`). `inlineImageMode` sets the default mode. See [Comments and attachments](comments.md).
+- `jira_comment_with_attachments` takes `attachments` (file paths, or objects with `path` and `filename`) and `inlineImages` (paths, or objects with `path`, `filename` and `mode` of `thumbnail` or `full`). `inlineImageMode` sets the default mode. See [Comments and attachments](/jira-cli/comments).
 - `jira_get_attachment` saves the file to a temp path by default. Pass `"inlineBase64": true` only when you need the bytes in the output.
 - `jira_get` reads any REST path, for example `{"path":"/serverInfo"}` or `{"apiName":"agile","apiVersion":"1.0","path":"/board","query":{"maxResults":5}}`. `jira_request` sends other methods and rejects `GET`.

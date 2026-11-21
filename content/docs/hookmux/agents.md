@@ -5,7 +5,7 @@ description: "This page is for a coding agent that builds, tests and installs ho
 
 ## Setup
 
-- hookmux needs Node.js 22 or later. The npm package is not published yet. Build it from source as described in [Install](install.md), then run `node dist/cli.mjs init`. When the package is published, the command is `npx hookmux init`.
+- hookmux needs Node.js 22 or later. The npm package is not published yet. Build it from source as described in [Install](/hookmux/install), then run `node dist/cli.mjs init`. When the package is published, the command is `npx hookmux init`.
 - `hookmux init` copies an authoring skill named `hookmux` into the global skill folder of each wired agent that has one. Pass `--no-skill` to skip it. The skill's source is [skills/hookmux/SKILL.md](https://github.com/khanglvm/hookmux/blob/db9e3a92e55fce0fa5660c73e7a7e3401849b098/skills/hookmux/SKILL.md).
 - All the docs as one text file: https://docs.khangle.dev/hookmux/llms-full.txt. The index of every page is https://docs.khangle.dev/llms.txt.
 - `hookmux schema --json` is the live reference for what the installed engine accepts. When it disagrees with a doc, follow the engine. `hookmux <command> --help` prints a command's exact arguments.
@@ -14,7 +14,7 @@ description: "This page is for a coding agent that builds, tests and installs ho
 
 Use this order. Each step ends when its check passes.
 
-1. Write down the event (`prompt.submit`, `session.start`, `tool.before` or `tool.after`), the trigger, the near misses that must stay silent, the effect (`inject`, `block` or `notify`) and the phase (`guard` to block, `route` to suggest, `enrich` for context added every time). Check in [Supported agents](hosts.md) that the person's agent supports the effect on that event.
+1. Write down the event (`prompt.submit`, `session.start`, `tool.before` or `tool.after`), the trigger, the near misses that must stay silent, the effect (`inject`, `block` or `notify`) and the phase (`guard` to block, `route` to suggest, `enrich` for context added every time). Check in [Supported agents](/hookmux/hosts) that the person's agent supports the effect on that event.
 2. Run `hookmux list --json`. If an installed plugin already covers the request, change it with an `[override.<id>]` table in `~/.hookmux/config.toml` instead of adding a near-duplicate.
 3. Run `hookmux new <id>` with a lowercase, dash-separated id. It writes `plugin.toml` and `tests.toml` in `./<id>/`. Add `--dir <path>` to put it elsewhere and `--event <event>` to pick the event.
 4. Write the checks, cheapest first: `regex`, `keywords` and `regex_groups` for prompt text; `tool`, `cwd_glob`, `path_exists`, `host` or `origin` for context. Add an exempt check for each near miss and write `when` as `trigger and not exempt`. Use a model-backed kind (`classify`) only when rules cannot express the trigger, and always set `when_degraded`. Use a `script` check last. Done when `hookmux validate <dir>` reports no problems.
@@ -48,7 +48,7 @@ This is the same on every client, Claude Code and Qwen Code included: their perm
 
 ## Commands with machine-readable output
 
-All exit `0` on success, `1` when they found problems, and `2` on a usage error. See the [command reference](cli.md) for every flag.
+All exit `0` on success, `1` when they found problems, and `2` on a usage error. See the [command reference](/hookmux/cli) for every flag.
 
 | Command                              | JSON fields                                                                                                                                                                           |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -98,6 +98,6 @@ The hook fails open on every error: it prints nothing and exits 0. An unknown ch
 
 ## Related pages
 
-- [plugin.toml reference](plugins.md) for every manifest key, check kind, effect and template placeholder.
-- [Supported agents](hosts.md) for each agent's events, effects and limits.
-- [Safety and approvals](safety.md) for the approval model.
+- [plugin.toml reference](/hookmux/plugins) for every manifest key, check kind, effect and template placeholder.
+- [Supported agents](/hookmux/hosts) for each agent's events, effects and limits.
+- [Safety and approvals](/hookmux/safety) for the approval model.

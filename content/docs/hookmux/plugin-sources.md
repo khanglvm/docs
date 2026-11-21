@@ -38,7 +38,7 @@ You answer in one of two ways:
 - At your own terminal, `hookmux install` shows the card and asks you to type `y`.
 - When your agent runs it, the agent shows you the card and a four-character code. Reply with `approve K7Q2` (using your code) in your next message. hookmux sees your reply and tells the agent to finish.
 
-[Safety](safety.md) says what each of these proves and what it does not.
+[Safety](/hookmux/safety) says what each of these proves and what it does not.
 
 To undo it, run `hookmux disable <id>` to turn the plugin off and keep it, or `hookmux remove <id>` to delete it.
 
@@ -82,4 +82,4 @@ To ship it:
 2. Run `hookmux validate ./branch-note` to check the manifest.
 3. Push the folder to a git repository. People install it with `hookmux add you/your-repo` and approve it with `hookmux promote branch-note`.
 
-The [plugin.toml reference](plugins.md) lists every manifest key, check kind, effect and template placeholder. `hookmux schema --json` prints the same data for tools. [Test a plugin](testing.md) explains the test cases.
+The [plugin.toml reference](/hookmux/plugins) lists every manifest key, check kind, effect and template placeholder. `hookmux schema --json` prints the same data for tools. [Test a plugin](/hookmux/testing) explains the test cases.

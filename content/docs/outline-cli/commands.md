@@ -56,7 +56,7 @@ Invalid arguments fail with `ARG_VALIDATION_FAILED`. The error carries the tool'
 outline-cli batch (--ops <json> | --ops-file <path>) [--parallel <n>] [--item-envelope compact|full] [--strict-exit]
 ```
 
-`--ops` is a JSON array of `{ "tool", "args", "profile" }` objects. See [Output and batch calls](output-and-batch.md) for the output shape. Defaults are `--parallel 4` and `--item-envelope compact`.
+`--ops` is a JSON array of `{ "tool", "args", "profile" }` objects. See [Output and batch calls](/outline-cli/output-and-batch) for the output shape. Defaults are `--parallel 4` and `--item-envelope compact`.
 
 ## profile add
 

@@ -19,15 +19,15 @@ This is an independent project, not an official Atlassian tool.
 
 | You want to | Read |
 | --- | --- |
-| Install the tool and connect to Jira | [Install](install.md) |
-| Run your first commands | [Quickstart](quickstart.md) |
-| Find and read tickets | [Find and read tickets](tickets.md) |
-| Create, assign, move or label tickets | [Change tickets](changes.md) |
-| Comment, attach files or post screenshots | [Comments and attachments](comments.md) |
-| Get every issue in a project version | [Release boards](releases.md) |
-| Use more than one Jira account, or fix emoji errors | [Profiles and storage](profiles.md) |
-| Look up a command or option | [Command reference](commands.md) |
-| Call any Jira tool by name | [Tool reference](tools.md) |
-| Set it up for a coding agent | [Use with coding agents](agents.md) |
+| Install the tool and connect to Jira | [Install](/jira-cli/install) |
+| Run your first commands | [Quickstart](/jira-cli/quickstart) |
+| Find and read tickets | [Find and read tickets](/jira-cli/tickets) |
+| Create, assign, move or label tickets | [Change tickets](/jira-cli/changes) |
+| Comment, attach files or post screenshots | [Comments and attachments](/jira-cli/comments) |
+| Get every issue in a project version | [Release boards](/jira-cli/releases) |
+| Use more than one Jira account, or fix emoji errors | [Profiles and storage](/jira-cli/profiles) |
+| Look up a command or option | [Command reference](/jira-cli/commands) |
+| Call any Jira tool by name | [Tool reference](/jira-cli/tools) |
+| Set it up for a coding agent | [Use with coding agents](/jira-cli/agents) |
 
 The older `jira-agent` command is an alias for `jira-cli`.
