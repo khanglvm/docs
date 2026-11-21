@@ -139,7 +139,7 @@ function main() {
   mkdirSync(WORK_DIR, { recursive: true });
   if (!dryRun) {
     try {
-      sh('gh', ['workflow', 'enable', 'sync', '-R', 'khanglvm/docs']);
+      sh('gh', ['workflow', 'enable', 'sync.yml', '-R', 'khanglvm/docs']);
     } catch (err) {
       log(`could not re-enable the sync workflow: ${err.message.split('\n')[0]}`);
     }
