@@ -12,6 +12,7 @@ Read [docs/CONTRACT.md](docs/CONTRACT.md) first. It defines what a library repo 
 - `app/(home)`: the hub. `app/(docs)`: library pages. `app/llms.txt`, `app/llms-full`, `app/llms.mdx`: agent files, moved into place by `scripts/agent-files.mjs` after the build.
 - `tools/docs-readme.mjs`: master copy of the script each library vendors as `scripts/docs-readme.mjs`.
 - `.github/workflows/sync.yml`: hourly sync, build, deploy and commit.
+- `ops/docs-review.mjs`: weekly M6 job (launchd, installed by `ops/install-review.sh`) that has headless Claude Code compare each library's code changes with its docs and open a pull request when they drift. State and log: `~/.local/share/oss-docs/`.
 
 ## Commands
 

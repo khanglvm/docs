@@ -2,6 +2,7 @@
 // Page order follows each library's meta.json, the same order as the sidebar.
 import type { Node } from 'fumadocs-core/page-tree';
 import { libraries, type Library } from './libraries';
+import { renderPageText } from './page-text';
 import { site } from './shared';
 import { source } from './source';
 
@@ -58,7 +59,7 @@ export async function renderLibraryFull(lib: Library): Promise<string> {
     `Install: \`${lib.install}\`. Source: https://github.com/${lib.repo}. Synced from ${lib.sync ? `${lib.sync.branch} @ ${lib.sync.sha.slice(0, 7)}` : 'a local preview'}.`,
   ].join('\n');
   const bodies = await Promise.all(
-    libraryPages(lib).map(async (page) => `# ${page.data.title}\n\nURL: ${abs(page.url)}\n\n${await page.data.getText('processed')}`),
+    libraryPages(lib).map((page) => renderPageText(page, source.getPages())),
   );
   return `${[header, ...bodies].join('\n\n---\n\n')}\n`;
 }

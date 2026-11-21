@@ -10,6 +10,7 @@
 | `lib/llms.ts` + routes | `/llms.txt` index, `/llms-full/<slug>.txt` and `/llms.mdx/<page>.md`. `scripts/agent-files.mjs` moves them to `/<slug>/llms-full.txt` and `/<page>.md` after the build. |
 | Cloudflare Worker `oss-docs` | Serves `out/` as static assets on docs.khangle.dev (`wrangler.jsonc`). |
 | `.github/workflows/sync.yml` | Hourly: sync, test, build, deploy, commit content, open an issue on failure. |
+| `ops/docs-review.mjs` | Weekly on the M6 (launchd): for each library whose branch moved, headless Claude Code (subscription) checks the code changes against docs/ and opens a PR when a page drifted; also re-enables the sync workflow. |
 | `tools/docs-readme.mjs` | Vendored into each library repo: fills README blocks from docs pages and checks the contract in CI. |
 
 ## Data flow
