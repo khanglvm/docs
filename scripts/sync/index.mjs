@@ -10,9 +10,10 @@
 // unless every library failed.
 
 import { readFileSync as fsReadFileSync } from 'node:fs';
-import { cp, mkdir, mkdtemp, readdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
+import { cp, mkdir, mkdtemp, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join, relative } from 'node:path';
+import { join } from 'node:path';
+import { listFiles } from './files.mjs';
 import { collectPublished } from './manifest.mjs';
 import { downloadDocs, fetchHeadSha, fetchNpmVersion } from './sources.mjs';
 import { toSitePage } from './transform.mjs';
@@ -32,21 +33,12 @@ async function readJson(path, fallback) {
   }
 }
 
-async function listFiles(dir, base = dir) {
-  const out = [];
-  for (const entry of await readdir(dir, { withFileTypes: true })) {
-    const full = join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...(await listFiles(full, base)));
-    else out.push(relative(base, full));
-  }
-  return out;
-}
-
 const exists = (path) => stat(path).then(() => true, () => false);
 
 /** Builds content/docs/<slug>/ for one library in a staging folder, then swaps it in. */
 async function syncLibrary(lib, sha, localDir) {
   const work = await mkdtemp(join(tmpdir(), `oss-docs-${lib.slug}-`));
+  const stage = join(CONTENT, `.${lib.slug}.next`);
   try {
     if (localDir) await cp(join(localDir, 'docs'), join(work, 'docs'), { recursive: true });
     else await downloadDocs(lib.repo, sha, work);
@@ -55,7 +47,6 @@ async function syncLibrary(lib, sha, localDir) {
     const read = (p) => readFileSync(join(docsDir, p));
     const { pages, metas } = collectPublished(files, read);
     const published = new Set(pages);
-    const stage = join(CONTENT, `.${lib.slug}.next`);
     await rm(stage, { recursive: true, force: true });
     const ctx = { published, repoUrl: `https://github.com/${lib.repo}`, ref: sha };
     for (const page of pages) {
@@ -64,13 +55,29 @@ async function syncLibrary(lib, sha, localDir) {
     }
     for (const meta of metas) await writeOut(join(stage, meta), siteMeta(meta, read(meta), lib));
     if (await exists(join(docsDir, ASSET_DIR))) await cp(join(docsDir, ASSET_DIR), join(stage, ASSET_DIR), { recursive: true });
-    const target = join(CONTENT, lib.slug);
-    await rm(target, { recursive: true, force: true });
-    await rename(stage, target);
+    await swapIn(stage, join(CONTENT, lib.slug));
     return pages.length;
   } finally {
+    // A failed sync must not leave a half-built stage in content/, where the workflow would commit it.
+    await rm(stage, { recursive: true, force: true });
     await rm(work, { recursive: true, force: true });
   }
+}
+
+// Replaces target with stage. The old copy moves aside first and comes back if the swap fails,
+// so the last good pages are never lost.
+async function swapIn(stage, target) {
+  const old = `${target}.old`;
+  await rm(old, { recursive: true, force: true });
+  const hadOld = await exists(target);
+  if (hadOld) await rename(target, old);
+  try {
+    await rename(stage, target);
+  } catch (err) {
+    if (hadOld) await rename(old, target);
+    throw err;
+  }
+  await rm(old, { recursive: true, force: true });
 }
 
 // The library's top meta.json becomes a sidebar root, so the site shows one library at a time

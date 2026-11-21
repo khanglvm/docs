@@ -39,8 +39,10 @@ function walk(dir, known, read, pages, metas) {
     // "..." and "z...a" mean "every other page"; the contract asks for explicit lists instead.
     if (/\.\.\./.test(entry)) throw new ManifestError(`docs/${metaPath}: list pages by name instead of "${entry}"`);
     const name = entry.replace(/^!/, '');
-    const page = [`${dir}${name}.md`, `${dir}${name}.mdx`].find((p) => known.has(p));
-    if (page) pages.push(page);
+    const page = `${dir}${name}.md`;
+    // MDX can run code during the site build, so the contract allows plain Markdown only.
+    if (known.has(`${dir}${name}.mdx`)) throw new ManifestError(`docs/${dir}${name}.mdx: publish pages as plain .md, not .mdx`);
+    if (known.has(page)) pages.push(page);
     else if (known.has(`${dir}${name}/meta.json`)) walk(`${dir}${name}/`, known, read, pages, metas);
     else throw new ManifestError(`docs/${metaPath} lists "${name}", but no ${dir}${name}.md or ${dir}${name}/meta.json exists`);
   }

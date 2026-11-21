@@ -10,7 +10,7 @@
     "lint": "biome check",
     "format": "biome format --write",
     "sync": "node scripts/sync/index.mjs",
-    "test": "node --test scripts/sync/*.test.mjs",
+    "test": "node --test scripts/sync/*.test.mjs ops/*.test.mjs",
     "deploy": "wrangler deploy"
   },
   "dependencies": {

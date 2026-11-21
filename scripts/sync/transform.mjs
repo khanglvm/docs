@@ -58,7 +58,9 @@ export function rewriteLink(target, ctx) {
   const fromDir = ctx.pagePath.split('/').slice(0, -1);
   const resolved = resolvePath([...fromDir], pathPart);
   if (resolved === null) return target;
-  if (resolved.startsWith('docs/') && ctx.published.has(resolved.slice(5))) return target;
+  const inDocs = resolved.startsWith('docs/') ? resolved.slice(5) : null;
+  // Published pages and docs/assets/ (copied by the sync) resolve on the site itself.
+  if (inDocs !== null && (ctx.published.has(inDocs) || inDocs.startsWith('assets/'))) return target;
   const kind = pathPart.endsWith('/') ? 'tree' : 'blob';
   return `${ctx.repoUrl}/${kind}/${ctx.ref}/${resolved}${hash}`;
 }
@@ -84,7 +86,7 @@ function rewriteLinks(body, ctx) {
       i % 2 === 1
         ? piece
         : piece.replace(/(!?\[[^\]]*\]\()([^)\s]+)((?:\s+"[^"]*")?\))/g, (_, open, target, close) => {
-            // Images stay relative only when the sync copies them (assets/); see sources.mjs.
+            // Images stay relative only when the sync copies them (docs/assets/); see index.mjs.
             return open + rewriteLink(target, ctx) + close;
           }),
     )

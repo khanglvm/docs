@@ -1,6 +1,10 @@
 // Checks the pure parts of the sync: which pages publish, and how a repo page becomes a site page.
 import assert from 'node:assert/strict';
+import { mkdir, mkdtemp, rm, symlink, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { test } from 'node:test';
+import { listFiles } from './files.mjs';
 import { collectPublished, ManifestError } from './manifest.mjs';
 import { rewriteLink, toSitePage } from './transform.mjs';
 
@@ -23,6 +27,23 @@ test('a listed page that does not exist is an error, and so is a missing meta.js
   assert.throws(() => collectPublished(['index.md'], () => ''), /meta.json is missing/);
 });
 
+test('an .mdx page is rejected, since MDX runs code at build time', () => {
+  assert.throws(() => collectPublished(['meta.json', 'index.mdx'], () => '{"pages":["index"]}'), /plain \.md/);
+});
+
+test('a symbolic link in docs/ fails the listing instead of being read', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'oss-docs-test-'));
+  try {
+    await mkdir(join(dir, 'guides'));
+    await writeFile(join(dir, 'guides/a.md'), '# A\n');
+    assert.deepEqual(await listFiles(dir), ['guides/a.md']);
+    await symlink('/etc/hosts', join(dir, 'guides/secret.md'));
+    await assert.rejects(listFiles(dir), /guides\/secret\.md is a symbolic link/);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
 test('links to published pages stay relative; other repo links point at GitHub', () => {
   assert.equal(rewriteLink('state.md#api', ctx('index.md')), 'state.md#api');
   assert.equal(rewriteLink('../README.md', ctx('index.md')), 'https://github.com/o/r/blob/abc123/README.md');
@@ -30,6 +51,7 @@ test('links to published pages stay relative; other repo links point at GitHub',
   assert.equal(rewriteLink('../../a.md', ctx('guides/a.md')), 'https://github.com/o/r/blob/abc123/a.md');
   assert.equal(rewriteLink('https://x.dev', ctx('index.md')), 'https://x.dev');
   assert.equal(rewriteLink('#local', ctx('index.md')), '#local');
+  assert.equal(rewriteLink('../assets/flow.png', ctx('guides/a.md')), '../assets/flow.png');
 });
 
 test('the H1 becomes the title and the first paragraph the description', () => {

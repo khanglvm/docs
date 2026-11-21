@@ -28,6 +28,13 @@ export function libraryPages(lib: Library): Page[] {
 
 const abs = (path: string) => `${site.url}${path}`;
 
+// A package that npm does not serve yet has no working install command (and an agent running
+// `npx <name>` could fetch someone else's package), so agents are sent to the install page.
+function installText(lib: Library): string {
+  if (lib.package && !lib.sync?.version) return `not on npm yet; follow ${abs(`/${lib.slug}/install.md`)}`;
+  return `\`${lib.install}\``;
+}
+
 export function renderIndex(): string {
   const lines = [
     `# ${site.title}`,
@@ -39,8 +46,8 @@ export function renderIndex(): string {
   for (const lib of libraries) {
     const pages = libraryPages(lib);
     if (pages.length === 0) continue;
-    const version = lib.sync?.version ? `npm ${lib.package}@${lib.sync.version}` : 'not on npm yet';
-    lines.push('', `## ${lib.title}`, '', `${lib.blurb} Install: \`${lib.install}\` (${version}). Source: https://github.com/${lib.repo}`, '');
+    const version = lib.sync?.version ? ` (npm ${lib.package}@${lib.sync.version})` : '';
+    lines.push('', `## ${lib.title}`, '', `${lib.blurb} Install: ${installText(lib)}${version}. Source: https://github.com/${lib.repo}`, '');
     lines.push(`- [All ${lib.title} docs in one file](${abs(`/${lib.slug}/llms-full.txt`)})`);
     for (const page of pages) {
       const desc = page.data.description ? `: ${page.data.description}` : '';
@@ -56,7 +63,7 @@ export async function renderLibraryFull(lib: Library): Promise<string> {
     '',
     `> ${lib.blurb}`,
     '',
-    `Install: \`${lib.install}\`. Source: https://github.com/${lib.repo}. Synced from ${lib.sync ? `${lib.sync.branch} @ ${lib.sync.sha.slice(0, 7)}` : 'a local preview'}.`,
+    `Install: ${installText(lib)}. Source: https://github.com/${lib.repo}. Synced from ${lib.sync ? `${lib.sync.branch} @ ${lib.sync.sha.slice(0, 7)}` : 'a local preview'}.`,
   ].join('\n');
   const bodies = await Promise.all(
     libraryPages(lib).map((page) => renderPageText(page, source.getPages())),
