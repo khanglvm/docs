@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "index",
+    "install",
+    "---Guides---",
+    "state",
+    "translation",
+    "events",
+    "nextjs",
+    "helpers",
+    "---For agents---",
+    "agents"
+  ],
+  "title": "@khanglvm/react",
+  "description": "Shared state with rollback, typed translations and async events between React components.",
+  "root": true
+}

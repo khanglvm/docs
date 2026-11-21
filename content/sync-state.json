@@ -1,1 +1,32 @@
-{}
+{
+  "hookmux": {
+    "sha": "a5085076341701f857313e5a8034ad750df3470d",
+    "version": null,
+    "branch": "main",
+    "syncedAt": "2026-11-21T03:30:29.659Z"
+  },
+  "jira-cli": {
+    "sha": "7ce51c73829e69356a605a07fad238247ec4c0df",
+    "version": "0.2.3",
+    "branch": "main",
+    "syncedAt": "2026-11-21T03:30:30.160Z"
+  },
+  "outline-cli": {
+    "sha": "8371bfa6e011ab92dcd94869dca18f0c72d7483c",
+    "version": "0.2.6",
+    "branch": "main",
+    "syncedAt": "2026-11-21T03:30:30.706Z"
+  },
+  "figma-lens": {
+    "sha": "0855be94d3c59089d9ad37065ea3ea3db9868b43",
+    "version": "0.3.2",
+    "branch": "main",
+    "syncedAt": "2026-11-21T03:30:31.157Z"
+  },
+  "react": {
+    "sha": "b97b4da2d146b5a3146a783103b95357cd830bd9",
+    "version": "1.3.0",
+    "branch": "master",
+    "syncedAt": "2026-11-21T03:30:31.613Z"
+  }
+}

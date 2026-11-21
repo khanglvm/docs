@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "index",
+    "install",
+    "quickstart",
+    "---Guides---",
+    "tickets",
+    "changes",
+    "comments",
+    "releases",
+    "profiles",
+    "---Reference---",
+    "commands",
+    "tools",
+    "---For agents---",
+    "agents"
+  ],
+  "title": "jira-cli",
+  "description": "Search and update issues on a self-hosted Jira Server, with results your agent can read.",
+  "root": true
+}

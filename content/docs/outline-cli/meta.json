@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "index",
+    "install",
+    "quickstart",
+    "---Guides---",
+    "profiles",
+    "search-and-read",
+    "edit-documents",
+    "delete-documents",
+    "comments-shares-attachments",
+    "output-and-batch",
+    "---Reference---",
+    "commands",
+    "tools",
+    "---For agents---",
+    "agents"
+  ],
+  "title": "outline-cli",
+  "description": "Let an agent search, read and safely edit your Outline knowledge base.",
+  "root": true
+}

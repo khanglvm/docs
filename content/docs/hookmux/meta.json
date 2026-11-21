@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "index",
+    "install",
+    "quickstart",
+    "---Guides---",
+    "how-plugins-decide",
+    "plugin-sources",
+    "testing",
+    "hosts",
+    "safety",
+    "troubleshooting",
+    "---Reference---",
+    "cli",
+    "plugins",
+    "---For agents---",
+    "agents"
+  ],
+  "title": "hookmux",
+  "description": "Write an agent hook once as a plugin and run it in Claude Code, Codex, Gemini CLI and more.",
+  "root": true
+}
