@@ -16,10 +16,10 @@ export default function HomePage() {
           </h1>
           <p className="mt-5 max-w-[600px] text-base text-fd-muted-foreground md:text-lg">{site.description}</p>
           <div className="mt-7 flex flex-wrap gap-2.5">
-            <a href="#tools" className="inline-flex h-10 items-center gap-2 rounded-full bg-fd-primary px-[18px] text-sm font-medium text-fd-primary-foreground">
+            <a href="#tools" className="inline-flex h-11 sm:h-10 items-center gap-2 rounded-full bg-fd-primary px-[18px] text-sm font-medium text-fd-primary-foreground">
               Browse tools <ArrowRight className="size-4" />
             </a>
-            <a href="/llms.txt" className="inline-flex h-10 items-center gap-2 rounded-full border bg-fd-card px-[18px] text-sm font-medium">
+            <a href="/llms.txt" className="inline-flex h-11 sm:h-10 items-center gap-2 rounded-full border bg-fd-card px-[18px] text-sm font-medium">
               <FileText className="size-4" /> llms.txt for agents
             </a>
           </div>

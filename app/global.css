@@ -32,6 +32,33 @@ html > body[data-scroll-locked] {
   --removed-body-scroll-bar-size: 0px !important;
 }
 
+/* Phones: Fumadocs' header icons (32-34px), the logo link (24px) and sidebar rows (39px) sit
+   under the 44px tap minimum, so they grow on small screens only and desktop keeps its density. */
+@media (max-width: 767px) {
+  :is(#nd-nav, #nd-subnav, aside, [role='dialog']) :is(button, a[aria-label]) {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  :is(#nd-nav, #nd-subnav) a[href='/'] {
+    min-height: 44px;
+  }
+  :is(#nd-sidebar, aside, [role='dialog']) a:not([aria-label]) {
+    min-height: 44px;
+  }
+  :is(.page-actions :is(a, button), [data-toc-popover-trigger]) {
+    min-height: 44px;
+  }
+  /* The copy icons beside headings and code stay 24px; an invisible ring widens the tap area. */
+  :is(figure button, [aria-label='Copy Anchor Link']) {
+    position: relative;
+  }
+  :is(figure button, [aria-label='Copy Anchor Link'])::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+  }
+}
+
 .hub-wash {
   background:
     radial-gradient(60% 50% at 85% 0%, #e4f3ef 0%, transparent 70%),
