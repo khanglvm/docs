@@ -1,0 +1,13 @@
+// Serves the static export in out/ as a Cloudflare Worker with static assets (no Worker code).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "oss-docs",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./out",
+    // /react serves react.html; unknown paths get the 404 page.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "docs.khangle.dev", "custom_domain": true }]
+}
