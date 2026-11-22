@@ -49,6 +49,8 @@ This file defines what a library repo provides so docs.khangle.dev can publish i
 
 7. **`AGENTS.md`** carries the "Docs" section below, so every coding agent working in the repo keeps the docs current in the same change.
 
+8. **A `docs` job in the publish workflow** starts the site's sync as soon as the publish job finishes, so a new release reaches the site within minutes instead of at the next scheduled sync. It reads the repo secret `DOCS_SYNC_TOKEN`, a fine-grained token for khanglvm/docs with only Actions read and write, and runs `gh workflow run sync.yml --repo khanglvm/docs --ref main`. Without the secret it logs a notice and passes, so a missing token never fails a release. The job in `khanglvm/hookmux/.github/workflows/release.yml` is the reference copy.
+
 ## The AGENTS.md section for library repos
 
 ```md
@@ -65,7 +67,7 @@ This file defines what a library repo provides so docs.khangle.dev can publish i
 
 ## What the docs site does
 
-- **Every hour**, and on demand, the `sync` workflow in khanglvm/docs:
+- **Right after each npm publish** (item 8), on a schedule GitHub runs every few hours, and on demand, the `sync` workflow in khanglvm/docs:
   1. Reads each library's latest commit on its default branch and its latest npm version.
   2. When either changed, pulls that commit's `docs/` and converts the listed pages.
   3. Rebuilds the site and deploys it to docs.khangle.dev.
@@ -76,7 +78,7 @@ This file defines what a library repo provides so docs.khangle.dev can publish i
 
 ## Adding a library
 
-1. Give the repo the files above.
+1. Give the repo the files above, and set its `DOCS_SYNC_TOKEN` secret.
 2. Add an entry to `libraries.json`, with `slug`, `repo`, `branch`, `package` (or `null`), `install`, `title`, `blurb` and `icon` (a Lucide icon name that `components/library-icon.tsx` maps).
 3. Preview the pages with `node scripts/sync/index.mjs --local <slug>=<path to the repo checkout>`, then `pnpm build` and `pnpm start`.
 4. Push. The next sync publishes the library.
