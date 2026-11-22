@@ -12,7 +12,7 @@ figma-lens --version
 
 To try it without a global install, run `npx figma-lens@latest --help`.
 
-The repository also has two install scripts, [install.sh](https://github.com/khanglvm/figma-lens/blob/ee38eacfb811ac40f6d7b3467c552c03dd0074e7/install.sh) and [install.ps1](https://github.com/khanglvm/figma-lens/blob/ee38eacfb811ac40f6d7b3467c552c03dd0074e7/install.ps1), for machines where you prefer to run a script. Both check for Node.js 20 and npm, then run the same global `npm install`. Download and read a script before you run it, and never pipe a remote script straight into a shell.
+The repository also has two install scripts, [install.sh](https://github.com/khanglvm/figma-lens/blob/676f08f129f0d16e1d0a38e13d1035e7b750ed3c/install.sh) and [install.ps1](https://github.com/khanglvm/figma-lens/blob/676f08f129f0d16e1d0a38e13d1035e7b750ed3c/install.ps1), for machines where you prefer to run a script. Both check for Node.js 20 and npm, then run the same global `npm install`. Download and read a script before you run it, and never pipe a remote script straight into a shell.
 
 ```sh
 sh install.sh

@@ -6,27 +6,27 @@
     "syncedAt": "2026-11-22T14:08:29.249Z"
   },
   "jira-cli": {
-    "sha": "9e94b495b547343ebfd065f103a24e4cd75345e5",
-    "version": "0.2.3",
+    "sha": "58d83d316b33137fc107858f2b726337f0c3c446",
+    "version": "0.2.4",
     "branch": "main",
-    "syncedAt": "2026-11-22T14:08:29.549Z"
+    "syncedAt": "2026-11-22T14:19:34.753Z"
   },
   "outline-cli": {
-    "sha": "6aaceae15fc96c2ccc0ac159fc89efefc578d912",
-    "version": "0.2.6",
+    "sha": "dac126ed949e712e37a353c8ab065b3831e59322",
+    "version": "0.2.7",
     "branch": "main",
-    "syncedAt": "2026-11-22T14:08:29.935Z"
+    "syncedAt": "2026-11-22T14:19:35.225Z"
   },
   "figma-lens": {
-    "sha": "ee38eacfb811ac40f6d7b3467c552c03dd0074e7",
-    "version": "0.3.2",
+    "sha": "676f08f129f0d16e1d0a38e13d1035e7b750ed3c",
+    "version": "0.3.3",
     "branch": "main",
-    "syncedAt": "2026-11-22T14:08:30.285Z"
+    "syncedAt": "2026-11-22T14:19:35.563Z"
   },
   "react": {
-    "sha": "fb4a46ad1a0d72608e679b90d7fc15bfa8d2ccba",
-    "version": "1.3.0",
+    "sha": "0243cab37156f31f19829f2bac1aac0d412ba6ae",
+    "version": "1.3.1",
     "branch": "master",
-    "syncedAt": "2026-11-22T14:08:30.609Z"
+    "syncedAt": "2026-11-22T14:19:35.866Z"
   }
 }
