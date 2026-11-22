@@ -1,6 +1,8 @@
 # Docs contract
 
-This file defines what a library repo provides so docs.khangle.dev can publish it, and what each side does when something changes. The site lives in [khanglvm/docs](https://github.com/khanglvm/docs). Every library repo keeps its own docs in its own `docs/` folder, and those files are the source of truth.
+This file defines what a library repo provides so docs.khangle.dev can publish it, and what each side does when something changes.
+
+A library's docs reach readers in three places: the GitHub repo (README and `docs/`), docs.khangle.dev, and the npm package page, which shows the README of the latest published version. Doc sync means a change to the tool is finished only when all three show it. `scripts/docs-surfaces.mjs` checks the three, and the `doc-sync` workflow in Khang's agent setup makes agents run it before they finish. The site lives in [khanglvm/docs](https://github.com/khanglvm/docs). Every library repo keeps its own docs in its own `docs/` folder, and those files are the source of truth.
 
 ## What a library repo provides
 
@@ -49,7 +51,11 @@ This file defines what a library repo provides so docs.khangle.dev can publish i
 
 7. **`AGENTS.md`** carries the "Docs" section below, so every coding agent working in the repo keeps the docs current in the same change.
 
-8. **A `docs` job in the publish workflow** starts the site's sync as soon as the publish job finishes, so a new release reaches the site within minutes instead of at the next scheduled sync. It reads the repo secret `DOCS_SYNC_TOKEN`, a fine-grained token for khanglvm/docs with only Actions read and write, and runs `gh workflow run sync.yml --repo khanglvm/docs --ref main`. Without the secret it logs a notice and passes, so a missing token never fails a release. The job in `khanglvm/hookmux/.github/workflows/release.yml` is the reference copy.
+8. **`scripts/docs-surfaces.mjs`** is a copy of [tools/docs-surfaces.mjs](../tools/docs-surfaces.mjs). Run from the repo root, it checks that the default branch holds this checkout's README and `docs/`, that docs.khangle.dev synced a commit that includes the latest docs change, and that the README of the latest npm version equals the README on the default branch. It exits 1 with the fix for each surface that is behind.
+
+9. **A `sync-site` job in `docs.yml`** starts the site's sync after the docs check passes on a push to the default branch, so a docs change reaches the site within minutes.
+
+10. **A `docs` job in the publish workflow** starts the site's sync as soon as the publish job finishes, so a new release reaches the site within minutes instead of at the next scheduled sync. It reads the repo secret `DOCS_SYNC_TOKEN`, a fine-grained token for khanglvm/docs with only Actions read and write, and runs `gh workflow run sync.yml --repo khanglvm/docs --ref main`. Without the secret it logs a notice and passes, so a missing token never fails a release. The job in `khanglvm/hookmux/.github/workflows/release.yml` is the reference copy.
 
 ## The AGENTS.md section for library repos
 
@@ -63,11 +69,12 @@ This file defines what a library repo provides so docs.khangle.dev can publish i
 - README sections between `<!-- docs:begin PAGE -->` and `<!-- docs:end -->` are generated. Edit the page in `docs/`, then run `node scripts/docs-readme.mjs`.
 - Run `node scripts/docs-readme.mjs --check` before committing. CI runs the same check.
 - Do not move or rename a published page without updating `docs/meta.json` and links to it.
+- A change is finished when GitHub, docs.khangle.dev and the npm page all show it. npm takes the README only from a published version, so a change to README.md ships with a new version (see Releases). After pushing and releasing, run `node scripts/docs-surfaces.mjs` until it exits 0.
 ```
 
 ## What the docs site does
 
-- **Right after each npm publish** (item 8), on a schedule GitHub runs every few hours, and on demand, the `sync` workflow in khanglvm/docs:
+- **Right after each npm publish** (item 10), after each docs push (item 9), on a schedule GitHub runs every few hours, and on demand, the `sync` workflow in khanglvm/docs:
   1. Reads each library's latest commit on its default branch and its latest npm version.
   2. When either changed, pulls that commit's `docs/` and converts the listed pages.
   3. Rebuilds the site and deploys it to docs.khangle.dev.
@@ -82,3 +89,4 @@ This file defines what a library repo provides so docs.khangle.dev can publish i
 2. Add an entry to `libraries.json`, with `slug`, `repo`, `branch`, `package` (or `null`), `install`, `title`, `blurb` and `icon` (a Lucide icon name that `components/library-icon.tsx` maps).
 3. Preview the pages with `node scripts/sync/index.mjs --local <slug>=<path to the repo checkout>`, then `pnpm build` and `pnpm start`.
 4. Push. The next sync publishes the library.
+5. Run `node scripts/docs-surfaces.mjs` in the library repo and fix what it reports until it exits 0.
