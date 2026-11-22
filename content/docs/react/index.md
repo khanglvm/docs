@@ -24,5 +24,5 @@ The utilities also fit together: the translation guide keeps the current languag
 
 Two small example apps run the same profile editor: typed translations with a language switcher, a store with an optimistic save that rolls back on failure, and an event that lets the editor veto a reset.
 
-- [React with Vite](https://github.com/khanglvm/react/tree/435c8ec52f8e708878869c3b84c724b5dadd8724/examples/react-vite)
-- [Next.js App Router](https://github.com/khanglvm/react/tree/435c8ec52f8e708878869c3b84c724b5dadd8724/examples/nextjs-app-router): language from a cookie, server-rendered text and metadata, server data seeding a client store.
+- [React with Vite](https://github.com/khanglvm/react/tree/fb4a46ad1a0d72608e679b90d7fc15bfa8d2ccba/examples/react-vite)
+- [Next.js App Router](https://github.com/khanglvm/react/tree/fb4a46ad1a0d72608e679b90d7fc15bfa8d2ccba/examples/nextjs-app-router): language from a cookie, server-rendered text and metadata, server data seeding a client store.
