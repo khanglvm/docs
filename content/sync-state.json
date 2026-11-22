@@ -1,32 +1,32 @@
 {
   "hookmux": {
-    "sha": "6b700916e8d2142e82aa3997d4a2874a25d70d52",
+    "sha": "614d36b883bb9268f33a0e9671a3848d64157c6e",
     "version": "0.1.0",
     "branch": "main",
-    "syncedAt": "2026-11-22T13:41:44.403Z"
+    "syncedAt": "2026-11-22T13:47:27.845Z"
   },
   "jira-cli": {
-    "sha": "e540a17fbdba5898bf7c187c0c7063e67d722d2a",
+    "sha": "d79498922bb7c8c471ece1f0d6ef953690309726",
     "version": "0.2.3",
     "branch": "main",
-    "syncedAt": "2026-11-22T13:41:44.747Z"
+    "syncedAt": "2026-11-22T13:47:28.322Z"
   },
   "outline-cli": {
-    "sha": "312f0be1b057e47e6e1c83e714db794a8aa2a43e",
+    "sha": "f600d94beebd7cd8035c2fd4a42f81ddacdc5f5e",
     "version": "0.2.6",
     "branch": "main",
-    "syncedAt": "2026-11-22T13:41:45.138Z"
+    "syncedAt": "2026-11-22T13:47:28.749Z"
   },
   "figma-lens": {
-    "sha": "2b7895985abfa56b4bb7bfb637c6090239de3e61",
+    "sha": "7ee45ca2a8a4099daaa0ef90ff52ab4f9e8c7f8f",
     "version": "0.3.2",
     "branch": "main",
-    "syncedAt": "2026-11-22T13:41:45.485Z"
+    "syncedAt": "2026-11-22T13:47:29.203Z"
   },
   "react": {
-    "sha": "db0d22ea7b3fa2790253da4b945aca325ca7a062",
+    "sha": "435c8ec52f8e708878869c3b84c724b5dadd8724",
     "version": "1.3.0",
     "branch": "master",
-    "syncedAt": "2026-11-22T13:41:45.763Z"
+    "syncedAt": "2026-11-22T13:47:29.628Z"
   }
 }
