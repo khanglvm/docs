@@ -6,7 +6,7 @@ description: "This page is for a coding agent that builds, tests and installs ho
 ## Setup
 
 - hookmux needs Node.js 22 or later. Install it from npm with `npm i -g hookmux` (or run `npx hookmux <command>`), then run `hookmux init`. To test unreleased changes, build from source as described in [Install](/hookmux/install) and run `node dist/cli.mjs <command>`.
-- `hookmux init` copies an authoring skill named `hookmux` into the global skill folder of each wired agent that has one. Pass `--no-skill` to skip it. The skill's source is [skills/hookmux/SKILL.md](https://github.com/khanglvm/hookmux/blob/0be972836c43451ad4a247249dfbe0b54f562545/skills/hookmux/SKILL.md).
+- `hookmux init` copies an authoring skill named `hookmux` into the global skill folder of each wired agent that has one. Pass `--no-skill` to skip it. The skill's source is [skills/hookmux/SKILL.md](https://github.com/khanglvm/hookmux/blob/7e468228e7f687b047a4789023262d9252b83c54/skills/hookmux/SKILL.md).
 - All the docs as one text file: https://docs.khangle.dev/hookmux/llms-full.txt. The index of every page is https://docs.khangle.dev/llms.txt.
 - `hookmux schema --json` is the live reference for what the installed engine accepts. When it disagrees with a doc, follow the engine. `hookmux <command> --help` prints a command's exact arguments.
 
@@ -38,7 +38,7 @@ Any later edit to a plugin folder un-trusts the plugin until the person promotes
 
 ## Install a plugin for the person
 
-When the person asks you to install a plugin someone else published, run the install line you were given: `npx -y hookmux install <github-username>/<repo-name>` (for example `khanglvm/hookmux-no-force-push`; a GitHub link works too). It sets hookmux up if needed, adds the plugin off, prints the plugin's card and a four-character code, and exits 3. Then:
+When the person asks you to install a plugin someone else published, run the install line you were given: `npx -y hookmux install <github-username>/<repo-name>` (for example `khanglvm/hookmux-no-force-push`; a plugin in a folder of the repository adds its path, as in `khanglvm/hookmux/plugins/hookmux-authoring`; a GitHub link works too). It sets hookmux up if needed, adds the plugin off, prints the plugin's card and a four-character code, and exits 3. Then:
 
 1. Show the person the card word for word. Do not shorten or reword it: the risk words and the "Can:" lines are what they decide on.
 2. Ask whether to turn the plugin on, and wait for their reply. Do not answer for them.
