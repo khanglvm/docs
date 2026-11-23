@@ -6,7 +6,7 @@ description: "This page is for a coding agent that builds, tests and installs ho
 ## Setup
 
 - hookmux needs Node.js 22 or later. Install it from npm with `npm i -g hookmux` (or run `npx hookmux <command>`), then run `hookmux init`. To test unreleased changes, build from source as described in [Install](/hookmux/install) and run `node dist/cli.mjs <command>`.
-- `hookmux init` copies an authoring skill named `hookmux` into the global skill folder of each wired agent that has one. Pass `--no-skill` to skip it. The skill's source is [skills/hookmux/SKILL.md](https://github.com/khanglvm/hookmux/blob/7e468228e7f687b047a4789023262d9252b83c54/skills/hookmux/SKILL.md).
+- `hookmux init` copies an authoring skill named `hookmux` into the global skill folder of each wired agent that has one. Pass `--no-skill` to skip it. The skill's source is [skills/hookmux/SKILL.md](https://github.com/khanglvm/hookmux/blob/61d48d773dd27332aee73e053dc78613cac43f9b/skills/hookmux/SKILL.md).
 - All the docs as one text file: https://docs.khangle.dev/hookmux/llms-full.txt. The index of every page is https://docs.khangle.dev/llms.txt.
 - `hookmux schema --json` is the live reference for what the installed engine accepts. When it disagrees with a doc, follow the engine. `hookmux <command> --help` prints a command's exact arguments.
 

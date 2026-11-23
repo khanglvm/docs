@@ -1,9 +1,9 @@
 {
   "hookmux": {
-    "sha": "7e468228e7f687b047a4789023262d9252b83c54",
+    "sha": "61d48d773dd27332aee73e053dc78613cac43f9b",
     "version": "0.1.3",
     "branch": "main",
-    "syncedAt": "2026-11-23T05:53:21.649Z"
+    "syncedAt": "2026-11-23T05:55:08.442Z"
   },
   "jira-cli": {
     "sha": "58d83d316b33137fc107858f2b726337f0c3c446",
