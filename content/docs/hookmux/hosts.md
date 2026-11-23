@@ -3,7 +3,7 @@ title: "Supported agents"
 description: "hookmux works with eight coding agents. Each has an adapter in src/hosts/ that turns the agent's hook payload into a hookmux event, renders the result in the agent's output format, and edits the agent's hook config."
 ---
 
-Plugins never see these formats. This page covers the behaviour that differs between agents: where each keeps its config, how its events map, what it can and cannot do, and how well each adapter has been tested. `hookmux schema --json` prints the effects each agent supports on each event and the native event names, and the [effects reference](https://github.com/khanglvm/hookmux/blob/b1c2939046e0e08b00cca62c43b5683af308639f/skills/hookmux/references/effects.md) shows them as a table.
+Plugins never see these formats. This page covers the behaviour that differs between agents: where each keeps its config, how its events map, what it can and cannot do, and how well each adapter has been tested. `hookmux schema --json` prints the effects each agent supports on each event and the native event names, and the [effects reference](https://github.com/khanglvm/hookmux/blob/0be972836c43451ad4a247249dfbe0b54f562545/skills/hookmux/references/effects.md) shows them as a table.
 
 | Agent          | Id            | Config file hookmux edits                  |
 | -------------- | ------------- | ------------------------------------------ |
