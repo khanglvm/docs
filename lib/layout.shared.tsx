@@ -4,7 +4,7 @@ import { FileText } from 'lucide-react';
 function Logo() {
   return (
     <span className="flex items-center gap-2 font-semibold tracking-tight">
-      <span className="grid size-6 place-items-center rounded-[7px] bg-fd-foreground text-xs text-fd-background">k</span>
+      <img src="/logo.svg" alt="" className="size-6 rounded-[7px]" />
       khangle.dev <span className="font-normal text-fd-muted-foreground">/ docs</span>
     </span>
   );
