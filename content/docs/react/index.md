@@ -3,7 +3,7 @@ title: "@khanglvm/react"
 description: "React utilities for TypeScript apps in React or Next.js App Router, each one usable on its own."
 ---
 
-- Shared state with selectors, Immer updates and an undo function per update, from [Refract](https://github.com/khanglvm/refract).
+- Shared state from [Refract](https://github.com/khanglvm/refract): a component rerenders only when the value it selected changes, nested updates are plain Immer draft assignments, and each update returns an undo function.
 - Typed translations: dictionaries checked by the compiler, translator hooks, and instant language switching without a page reload.
 - Async events between components that don't know each other, with typed answers.
 - Helpers for deep equality, cloning, stable references and React children.
@@ -24,5 +24,5 @@ The utilities also fit together: the translation guide keeps the current languag
 
 Two small example apps run the same profile editor: typed translations with a language switcher, a store with an optimistic save that rolls back on failure, and an event that lets the editor veto a reset.
 
-- [React with Vite](https://github.com/khanglvm/react/tree/ba77d5f93eba8bd70e685c11a8222dc6ed014b7a/examples/react-vite)
-- [Next.js App Router](https://github.com/khanglvm/react/tree/ba77d5f93eba8bd70e685c11a8222dc6ed014b7a/examples/nextjs-app-router): language from a cookie, server-rendered text and metadata, server data seeding a client store.
+- [React with Vite](https://github.com/khanglvm/react/tree/b9483b17ade2088a136a9b6cb71a28876676c4cf/examples/react-vite)
+- [Next.js App Router](https://github.com/khanglvm/react/tree/b9483b17ade2088a136a9b6cb71a28876676c4cf/examples/nextjs-app-router): language from a cookie, server-rendered text and metadata, server data seeding a client store.
