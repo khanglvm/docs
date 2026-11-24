@@ -28,5 +28,11 @@
     "version": "1.3.1",
     "branch": "master",
     "syncedAt": "2026-11-22T14:19:35.866Z"
+  },
+  "refract": {
+    "sha": "35378a436601bff013517936b7ea1665536b8000",
+    "version": "0.0.0-stage",
+    "branch": "main",
+    "syncedAt": "2026-11-24T08:05:05.775Z"
   }
 }
