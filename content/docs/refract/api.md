@@ -80,6 +80,7 @@ setState<T extends Partial<State> | ((draft: Draft<State>) => void)>(valueOrUpda
 - A partial object replaces each listed top-level field with a deep copy of the value. Nested objects are not merged.
 - A function receives an Immer draft; change it in place and return nothing.
 - The state changes synchronously and subscribers are notified right away, so a controlled input keeps its caret. React batches the renders, so several updates in one event handler render once. A Provider with a post-flush callback batches notifications into one microtask instead; see `useSetPostFlush`.
+- An update that changes nothing notifies no one. Each update runs every subscriber's selector, so change many items in one draft rather than one call per item.
 - Returns `revert`. Calling it applies the inverse patches of that update to the current state and notifies subscribers. When the setter came from `enableRevert = false`, `revert` does nothing.
 - The setter is stable for the life of the Provider.
 
@@ -98,7 +99,7 @@ Reads the current state, or the selector's result, at call time without subscrib
 useSetPostFlush(): (callback: (draft: Draft<State>) => void) => void
 ```
 
-Returns a stable function that registers the Provider's post-flush callback. The callback runs once per microtask batch, after the batch's updates and before subscribers are notified. While a callback is registered, that Provider notifies once per batch instead of on every update, so a controlled text input that reads from it moves its caret to the end as you type; give such a field local state or make it uncontrolled. Each Provider holds one callback; registering replaces it, and there is no unregister. Its changes are not part of any revert. See [Post-flush callbacks](/refract/post-flush).
+Returns a stable function that registers the Provider's post-flush callback. The callback runs once per microtask batch, after the batch's updates and before subscribers are notified. A hook or snapshot getter that reads before the batch runs it first, so the read sees current derived values. A `setState` draft does not run it, so a second update in the same batch sees derived values from before the first. While a callback is registered, that Provider notifies once per batch instead of on every update, so a controlled text input that reads from it moves its caret to the end as you type; give such a field local state or make it uncontrolled. Each Provider holds one callback; registering replaces it, and there is no unregister. Its changes are not part of any revert. See [Post-flush callbacks](/refract/post-flush).
 
 ### withContextProvider
 
