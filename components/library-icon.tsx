@@ -1,4 +1,4 @@
-import { Atom, BookOpen, Package, ScanSearch, Ticket, Webhook, type LucideIcon } from 'lucide-react';
+import { Atom, BookOpen, Package, ScanSearch, Ticket, Triangle, Webhook, type LucideIcon } from 'lucide-react';
 
 // libraries.json names icons by their Lucide name; add a mapping here when a new library needs one.
 const ICONS: Record<string, LucideIcon> = {
@@ -6,6 +6,7 @@ const ICONS: Record<string, LucideIcon> = {
   'book-open': BookOpen,
   'scan-search': ScanSearch,
   ticket: Ticket,
+  triangle: Triangle,
   webhook: Webhook,
 };
 

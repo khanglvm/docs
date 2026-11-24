@@ -55,6 +55,16 @@
       "title": "@khanglvm/react",
       "blurb": "Shared state with rollback, typed translations and async events between React components.",
       "icon": "atom"
+    },
+    {
+      "slug": "refract",
+      "repo": "khanglvm/refract",
+      "branch": "main",
+      "package": "refract-state",
+      "install": "npm i refract-state",
+      "title": "Refract",
+      "blurb": "Scoped React state: components read slices through selectors, update with Immer drafts and can undo any update.",
+      "icon": "triangle"
     }
   ]
 }
