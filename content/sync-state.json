@@ -3,36 +3,36 @@
     "sha": "d4074ed0c0f5dd4f68e13ddd4d885e10fb63a211",
     "version": "0.2.0",
     "branch": "main",
-    "syncedAt": "2026-11-24T10:27:54.108Z"
+    "syncedAt": "2026-11-24T11:44:14.436Z"
   },
   "jira-cli": {
     "sha": "58d83d316b33137fc107858f2b726337f0c3c446",
     "version": "0.2.4",
     "branch": "main",
-    "syncedAt": "2026-11-22T14:19:34.753Z"
+    "syncedAt": "2026-11-24T11:44:14.795Z"
   },
   "outline-cli": {
     "sha": "dac126ed949e712e37a353c8ab065b3831e59322",
     "version": "0.2.7",
     "branch": "main",
-    "syncedAt": "2026-11-22T14:19:35.225Z"
+    "syncedAt": "2026-11-24T11:44:15.213Z"
   },
   "figma-lens": {
     "sha": "676f08f129f0d16e1d0a38e13d1035e7b750ed3c",
     "version": "0.3.3",
     "branch": "main",
-    "syncedAt": "2026-11-22T14:19:35.563Z"
+    "syncedAt": "2026-11-24T11:44:15.556Z"
   },
   "react": {
     "sha": "50569105db54382fcffe8d2154742e6afc92a966",
     "version": "1.4.2",
     "branch": "master",
-    "syncedAt": "2026-11-24T10:24:58.215Z"
+    "syncedAt": "2026-11-24T11:44:15.877Z"
   },
   "refract": {
     "sha": "96346d41120f48aaa55ad1bcc3ebe8e756104ca7",
     "version": "1.2.0",
     "branch": "main",
-    "syncedAt": "2026-11-24T11:43:29.697Z"
+    "syncedAt": "2026-11-24T11:44:16.179Z"
   }
 }
