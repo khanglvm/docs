@@ -19,6 +19,8 @@ export interface Library {
   title: string;
   blurb: string;
   icon: string;
+  /** Path under public/ to the library's own square mark; the hub shows `icon` when it is absent. */
+  logo?: string;
   sync: SyncInfo | null;
 }
 

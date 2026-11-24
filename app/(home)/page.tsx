@@ -40,9 +40,14 @@ function LibraryCard({ lib }: { lib: Library }) {
   return (
     <div className="relative flex flex-col gap-3 rounded-2xl border bg-fd-card p-5 transition-shadow hover:shadow-[0_12px_32px_-16px_rgba(20,20,30,0.18)]">
       <div className="flex items-center gap-3">
-        <span className="grid size-9 place-items-center rounded-[10px] bg-fd-muted">
-          <LibraryIcon name={lib.icon} className="size-[18px]" />
-        </span>
+        {lib.logo ? (
+          // The mark carries its own tile, so it replaces the muted tile rather than sitting inside it.
+          <img src={lib.logo} alt="" className="size-9 rounded-[10px]" />
+        ) : (
+          <span className="grid size-9 place-items-center rounded-[10px] bg-fd-muted">
+            <LibraryIcon name={lib.icon} className="size-[18px]" />
+          </span>
+        )}
         <div>
           {/* The whole card is clickable through this link's overlay; the copy button sits above it. */}
           <Link href={`/${lib.slug}`} className="font-semibold tracking-tight after:absolute after:inset-0 after:rounded-2xl">

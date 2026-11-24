@@ -14,7 +14,8 @@
       "install": "npx hookmux init",
       "title": "hookmux",
       "blurb": "Write an agent hook once as a plugin and run it in Claude Code, Codex, Gemini CLI and more.",
-      "icon": "webhook"
+      "icon": "webhook",
+      "logo": "/icons/hookmux.svg"
     },
     {
       "slug": "jira-cli",
@@ -24,7 +25,8 @@
       "install": "npm i -g @khanglvm/jira-cli",
       "title": "jira-cli",
       "blurb": "Search and update issues on a self-hosted Jira Server, with results your agent can read.",
-      "icon": "ticket"
+      "icon": "ticket",
+      "logo": "/icons/jira-cli.svg"
     },
     {
       "slug": "outline-cli",
@@ -34,7 +36,8 @@
       "install": "npm i -g @khanglvm/outline-cli",
       "title": "outline-cli",
       "blurb": "Let an agent search, read and safely edit your Outline knowledge base.",
-      "icon": "book-open"
+      "icon": "book-open",
+      "logo": "/icons/outline-cli.svg"
     },
     {
       "slug": "figma-lens",
@@ -44,7 +47,8 @@
       "install": "npm i -g figma-lens",
       "title": "figma-lens",
       "blurb": "Inspect Figma files without opening Figma: find screens, read layout and type, export assets.",
-      "icon": "scan-search"
+      "icon": "scan-search",
+      "logo": "/icons/figma-lens.svg"
     },
     {
       "slug": "react",
@@ -54,7 +58,8 @@
       "install": "npm i @khanglvm/react",
       "title": "@khanglvm/react",
       "blurb": "Shared state with rollback, typed translations and async events between React components.",
-      "icon": "atom"
+      "icon": "atom",
+      "logo": "/icons/react.svg"
     },
     {
       "slug": "refract",
@@ -64,7 +69,8 @@
       "install": "npm i refract-state",
       "title": "Refract",
       "blurb": "Scoped React state: components read slices through selectors, update with Immer drafts and can undo any update.",
-      "icon": "triangle"
+      "icon": "triangle",
+      "logo": "/icons/refract.svg"
     }
   ]
 }

@@ -20,7 +20,7 @@ A near-white workspace with near-black ink and buttons, hairline borders, white 
 
 - Type: Inter for text, Geist Mono for code, versions and install commands. Hub headline 56 px / 600 / -0.035em (36 px on phones).
 - Radius: 8 px controls, 10 px icon tiles, 16 px cards, full pill for buttons and search.
-- Icons: lucide-react only, 1.5 to 2 px stroke.
+- Icons: lucide-react only, 1.5 to 2 px stroke. Exception: a library's own mark (`public/icons/<slug>.svg`) fills its hub-card icon tile.
 - Spacing: 4 px base; cards 20 px padding, 16 px grid gap.
 
 ## Components

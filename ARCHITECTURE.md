@@ -4,7 +4,7 @@
 
 | Piece | Job |
 | --- | --- |
-| `libraries.json` | Which repos to publish, with their install command, blurb and icon. |
+| `libraries.json` | Which repos to publish, with their install command, blurb, icon and logo. |
 | `scripts/sync/` | Downloads each repo's `docs/` at its latest default-branch commit, keeps the pages `docs/meta.json` lists, converts them (H1 to title, first paragraph to description, repo links to GitHub URLs), and writes `content/docs/<slug>/` plus `content/sync-state.json`. |
 | Fumadocs (Next.js 16, static export) | Renders `content/docs` with `fumadocs-mdx`. The hub is `app/(home)`; library pages are `app/(docs)/[...slug]`. Search uses a static Orama index. |
 | `lib/llms.ts` + routes | `/llms.txt` index, `/llms-full/<slug>.txt` and `/llms.mdx/<page>.md`. `scripts/agent-files.mjs` moves them to `/<slug>/llms-full.txt` and `/<page>.md` after the build. |

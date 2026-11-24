@@ -86,7 +86,7 @@ A library's docs reach readers in three places: the GitHub repo (README and `doc
 ## Adding a library
 
 1. Give the repo the files above, and set its `DOCS_SYNC_TOKEN` secret.
-2. Add an entry to `libraries.json`, with `slug`, `repo`, `branch`, `package` (or `null`), `install`, `title`, `blurb` and `icon` (a Lucide icon name that `components/library-icon.tsx` maps).
+2. Add an entry to `libraries.json`, with `slug`, `repo`, `branch`, `package` (or `null`), `install`, `title`, `blurb` and `icon` (a Lucide icon name that `components/library-icon.tsx` maps). Add `logo` (`/icons/<slug>.svg`, a square SVG with its own rounded tile in `public/icons/`) once the library has a mark; the hub card shows it in place of the Lucide icon.
 3. Preview the pages with `node scripts/sync/index.mjs --local <slug>=<path to the repo checkout>`, then `pnpm build` and `pnpm start`.
 4. Push. The next sync publishes the library.
 5. Run `node scripts/docs-surfaces.mjs` in the library repo and fix what it reports until it exits 0.
