@@ -30,9 +30,9 @@
     "syncedAt": "2026-11-24T10:24:58.215Z"
   },
   "refract": {
-    "sha": "a05afd3c2bb3b4bb19af9fae1edfe59c2c759870",
-    "version": "1.1.0",
+    "sha": "96346d41120f48aaa55ad1bcc3ebe8e756104ca7",
+    "version": "1.2.0",
     "branch": "main",
-    "syncedAt": "2026-11-24T10:54:06.017Z"
+    "syncedAt": "2026-11-24T11:43:29.697Z"
   }
 }
