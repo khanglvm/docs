@@ -24,15 +24,15 @@
     "syncedAt": "2026-11-22T14:19:35.563Z"
   },
   "react": {
-    "sha": "0243cab37156f31f19829f2bac1aac0d412ba6ae",
+    "sha": "ba77d5f93eba8bd70e685c11a8222dc6ed014b7a",
     "version": "1.3.1",
     "branch": "master",
-    "syncedAt": "2026-11-22T14:19:35.866Z"
+    "syncedAt": "2026-11-24T08:16:28.920Z"
   },
   "refract": {
-    "sha": "35378a436601bff013517936b7ea1665536b8000",
-    "version": "0.0.0-stage",
+    "sha": "880f1fae68c408835f00805e49a7c8f732bd0271",
+    "version": "1.0.0",
     "branch": "main",
-    "syncedAt": "2026-11-24T08:05:05.775Z"
+    "syncedAt": "2026-11-24T08:16:29.397Z"
   }
 }
