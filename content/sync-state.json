@@ -25,14 +25,14 @@
   },
   "react": {
     "sha": "b9483b17ade2088a136a9b6cb71a28876676c4cf",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "branch": "master",
-    "syncedAt": "2026-11-24T08:43:07.566Z"
+    "syncedAt": "2026-11-24T09:28:26.486Z"
   },
   "refract": {
-    "sha": "17b6fe3e0405eb8b72588b9a6ce1c0b512241569",
-    "version": "1.0.0",
+    "sha": "57b85c31cca749e3e446e00a97607d76626e1c0e",
+    "version": "1.0.1",
     "branch": "main",
-    "syncedAt": "2026-11-24T08:43:08.074Z"
+    "syncedAt": "2026-11-24T09:28:27.055Z"
   }
 }
