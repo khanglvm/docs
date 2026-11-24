@@ -32,8 +32,11 @@ jobs:
     timeout-minutes: 20
     steps:
       # No token stays in .git/config while synced content builds; only the commit step gets one.
+      # A run that waited in the concurrency queue starts from the newest main, not the commit that
+      # triggered it, so it builds on the content the previous run committed.
       - uses: actions/checkout@v6
         with:
+          ref: main
           persist-credentials: false
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
@@ -85,7 +88,18 @@ jobs:
           git add content
           git commit -m "sync: update library docs [skip ci]"
           auth=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
-          git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $auth" push origin HEAD:main
+          git_auth() { git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $auth" "$@"; }
+          # main can move while this run builds (a library push or another commit). Replay the sync
+          # commit on top and retry; on a conflict this run's freshly synced content wins.
+          for attempt in 1 2 3 4 5; do
+            if git_auth push origin HEAD:main; then exit 0; fi
+            echo "Push rejected (attempt $attempt); rebasing on the newest main."
+            git_auth fetch origin main
+            git rebase -X theirs origin/main
+            sleep $((attempt * 3))
+          done
+          echo "::error::Could not push the synced content after 5 attempts."
+          exit 1
 
       - name: Report sync problems
         if: always()
